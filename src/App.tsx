@@ -1,10 +1,9 @@
 import { Chidi } from './Chidi';
 
-export function App() {
 
+export function App() {
 
   return (
     <Chidi />
   );
-
 }

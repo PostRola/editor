@@ -12,7 +12,7 @@ module.exports = {
   devtool: 'source-map',
 
   entry: {
-    main: './src/index.ts'
+    main: ['./src/style.ts', './src/index.ts']
   },
 
   output: {
