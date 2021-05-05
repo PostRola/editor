@@ -1,9 +1,16 @@
-import { Chidi } from './Chidi';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import { NewPost } from './Post/NewPost';
 
 
 export function App() {
-
   return (
-    <Chidi />
+    <BrowserRouter>
+      <Switch>
+        <Route path='/new'>
+          <NewPost />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }

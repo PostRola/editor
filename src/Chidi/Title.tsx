@@ -2,7 +2,7 @@ import { css, cx } from '@emotion/css';
 import { ChangeEvent, KeyboardEvent } from 'react';
 
 
-export interface EditorTitleProps {
+export interface TitleProps {
   className?: string;
   value: string;
   onChange: (value: string) => void;
@@ -49,7 +49,7 @@ const textStyle = css`
 `;
 
 
-export function EditorTitle(props: EditorTitleProps) {
+export function Title(props: TitleProps) {
 
   const { className, value, onCommit } = props;
 
@@ -58,19 +58,27 @@ export function EditorTitle(props: EditorTitleProps) {
   };
 
   const onKeyboard = (e: KeyboardEvent) => {
-    if (e.key === 'Enter') {
+    console.log(e);
+    if (e.key === 'Enter' || e.key === 'ArrowDown') {
+      e.preventDefault();
       onCommit();
+    } else if (e.key === 'ArrowRight') {
+      const target = e.target as HTMLTextAreaElement;
+
+      if (value.length === target.selectionStart) {
+        e.preventDefault();
+        onCommit();
+      }
     }
   };
 
   const placeholder = 'Post Title';
-
   const classes = cx('chidi__title', rootStyle, className);
 
   return (
     <div className={classes}>
       <textarea className={textStyle} placeholder={placeholder}
-        value={value} onChange={onChange} onKeyDown={onKeyboard} />
+        value={value} onChange={onChange} onKeyDownCapture={onKeyboard} />
       <div className={divStyle}>{value || placeholder}</div>
     </div>
   );

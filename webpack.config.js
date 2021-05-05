@@ -32,7 +32,9 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({})
+    new HtmlWebpackPlugin({
+      base: '/'
+    })
   ],
 
   resolve: {
