@@ -8,7 +8,7 @@ import {
   ListOrdered, ListUnordered
  } from '../Icons';
 
-export interface InlineToolbarProps {
+export interface MainToolbarProps {
   className?: string;
   editor: Editor | null;
 }
@@ -39,7 +39,7 @@ const iconStyle = css`
 `;
 
 
-export function InlineToolbar(props: InlineToolbarProps) {
+export function MainToolbar(props: MainToolbarProps) {
 
   const { className } = props;
 

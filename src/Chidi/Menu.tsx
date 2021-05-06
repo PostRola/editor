@@ -2,7 +2,7 @@ import { css } from '@emotion/css';
 import { Editor, FloatingMenu, BubbleMenu } from '@tiptap/react';
 import { Props } from 'tippy.js';
 
-import { InlineToolbar } from './InlineToolbar';
+import { MainToolbar } from './MainToolbar';
 
 export interface MainMenuProps {
   editor: Editor | null;
@@ -22,7 +22,7 @@ export function MainMenu(props: MainMenuProps) {
 
   return editor && (
     <FloatingMenu editor={editor} tippyOptions={options}>
-      <InlineToolbar editor={editor} />
+      <MainToolbar editor={editor} />
     </FloatingMenu>
   );
 }

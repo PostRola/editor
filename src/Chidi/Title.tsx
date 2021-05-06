@@ -12,16 +12,20 @@ export interface TitleProps {
 const fontStyle = css`
   font-family: inherit;
   font-size: 3rem;
-  font-weight: 600;
+  font-weight: 200;
   line-height: 1.15em;
 `;
 
 const rootStyle = css`
   position: relative;
+  padding-bottom: 1rem;
+
+  border-bottom: 1px solid #EEEEEE;
+
   ${fontStyle};
 `;
 
-const divStyle = css`
+const hiddenTextStyle = css`
   visibility: hidden;
   opacity: 0;
 
@@ -58,7 +62,6 @@ export function Title(props: TitleProps) {
   };
 
   const onKeyboard = (e: KeyboardEvent) => {
-    console.log(e);
     if (e.key === 'Enter' || e.key === 'ArrowDown') {
       e.preventDefault();
       onCommit();
@@ -79,7 +82,7 @@ export function Title(props: TitleProps) {
     <div className={classes}>
       <textarea className={textStyle} placeholder={placeholder}
         value={value} onChange={onChange} onKeyDownCapture={onKeyboard} />
-      <div className={divStyle}>{value || placeholder}</div>
+      <div className={hiddenTextStyle}>{value || placeholder}</div>
     </div>
   );
 }
