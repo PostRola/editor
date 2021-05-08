@@ -2,6 +2,7 @@ import { css } from '@emotion/css';
 import { Editor, FloatingMenu, BubbleMenu } from '@tiptap/react';
 import { Props } from 'tippy.js';
 
+import { ContextToolbar } from './ContextToolbar';
 import { MainToolbar } from './MainToolbar';
 
 export interface MainMenuProps {
@@ -39,7 +40,7 @@ export function ContextMenu(props: ContextMenuProps) {
 
   return editor && (
     <BubbleMenu editor={editor}>
-      <div>Something...</div>
+      <ContextToolbar editor={editor} />
     </BubbleMenu>
   );
 }

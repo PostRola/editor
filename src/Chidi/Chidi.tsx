@@ -1,17 +1,39 @@
 import { css, cx } from '@emotion/css';
-import Placeholder from '@tiptap/extension-placeholder';
-import { EditorContent, useEditor } from '@tiptap/react';
-import { defaultExtensions } from '@tiptap/starter-kit';
-import { useEffect, useState } from 'react';
 
+import Blockquote from '@tiptap/extension-blockquote';
+import Bold from '@tiptap/extension-bold';
+import BulletList from '@tiptap/extension-bullet-list';
+import Code from '@tiptap/extension-code';
+import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
+import Document from '@tiptap/extension-document';
+import Dropcursor from '@tiptap/extension-dropcursor';
+import Gapcursor from '@tiptap/extension-gapcursor';
+import HardBreak from '@tiptap/extension-hard-break';
+import Heading from '@tiptap/extension-heading';
+import History from '@tiptap/extension-history';
+import HorizontalRule from '@tiptap/extension-horizontal-rule';
+import Italic from '@tiptap/extension-italic';
+import ListItem from '@tiptap/extension-list-item';
+import OrderedList from '@tiptap/extension-ordered-list';
+import Paragraph from '@tiptap/extension-paragraph';
+import Placeholder from '@tiptap/extension-placeholder';
+import Strike from '@tiptap/extension-strike';
+import Text from '@tiptap/extension-text';
+import Underline from '@tiptap/extension-underline';
+import { EditorContent, useEditor } from '@tiptap/react';
+
+import { useEffect, useState } from 'react';
+import { MainToolbar } from './MainToolbar';
+
+import { ContextMenu, MainMenu } from './Menu';
 import { Title } from './Title';
-import { MainMenu } from './Menu';
 
 export interface ChidiProps {
 
 }
 
 const rootStyle = css`
+  position: relative;
   margin: auto;
   max-width: 720px;
 
@@ -36,12 +58,26 @@ export function Chidi(props: ChidiProps) {
 
   const editor = useEditor({
     extensions: [
-      ...defaultExtensions({
-        heading: {
-          levels: [2, 3]
-        }
-      }),
-      Placeholder
+      Document,
+      Blockquote,
+      Bold,
+      BulletList,
+      Code,
+      CodeBlockLowlight,
+      Dropcursor,
+      Gapcursor,
+      HardBreak,
+      Heading.configure({ levels: [2, 3] }),
+      History,
+      HorizontalRule,
+      Italic,
+      ListItem,
+      OrderedList,
+      Paragraph,
+      Placeholder,
+      Strike,
+      Text,
+      Underline
     ],
     content: '<p>Hello World! 🌎️</p>'
   });
@@ -61,6 +97,8 @@ export function Chidi(props: ChidiProps) {
     <div className={cx('chidi', rootStyle)}>
       <Title value={title} onChange={setTitle} onCommit={onCommit} />
       <MainMenu editor={editor} />
+      {editor && <MainToolbar editor={editor} />}
+      <ContextMenu editor={editor} />
       <div>
         <EditorContent editor={editor} />
       </div>

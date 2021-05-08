@@ -50,8 +50,15 @@ export interface PushButtonProps extends ButtonProps {
 
 const pushStyle = css`
 
+  transition: all 120ms ease-out;
+
+  &.pushed {
+    background-color: #EEEEEE;
+  };
+
+  &:focus,
   &:hover {
-    background: #F1F3F4;
+    background-color: #F1F3F4;
   }
 `;
 

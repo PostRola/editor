@@ -10,6 +10,7 @@ export interface TitleProps {
 }
 
 const fontStyle = css`
+  color: #333333;
   font-family: inherit;
   font-size: 3rem;
   font-weight: 200;
@@ -50,6 +51,11 @@ const textStyle = css`
 
   background-color: transparent;
   font: inherit;
+  color: inherit;
+
+  &::placeholder {
+    color: #C1C7CC;
+  }
 `;
 
 
