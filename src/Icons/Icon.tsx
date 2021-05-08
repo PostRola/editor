@@ -9,10 +9,12 @@ export interface SVGIconProps {
 
 const style = css`
   display: inline-flex;
-  align-self: center;
-
   width: 1rem;
   height: 1rem;
+
+  align-self: center;
+
+  fill: currentColor;
 `;
 
 export function SVGIcon(props: SVGIconProps) {

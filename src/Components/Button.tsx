@@ -41,38 +41,3 @@ export function Button(props: ButtonProps) {
     <button {...props} className={classes} />
   );
 }
-
-
-export interface PushButtonProps extends ButtonProps {
-  pushed?: boolean;
-}
-
-
-const pushStyle = css`
-
-  transition: all 120ms ease-out;
-
-  &.pushed {
-    background-color: #EEEEEE;
-  };
-
-  &:focus,
-  &:hover {
-    background-color: #F1F3F4;
-  }
-`;
-
-
-export function PushButton(props: PushButtonProps) {
-
-  const { pushed, className } = props;
-
-  const classes = cx(pushStyle, pushed && 'pushed', className);
-
-  const modified = { ...props };
-  delete modified.pushed;
-
-  return (
-    <Button {...modified} variant={'minimal'} className={classes} />
-  );
-}

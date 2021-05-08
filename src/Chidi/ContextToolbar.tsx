@@ -1,7 +1,7 @@
 import { css, cx } from '@emotion/css';
 import { Editor } from '@tiptap/react';
 
-import { Button, PushButton } from '../Components/Button';
+import { EditorButton } from './EditorButton';
 import {
   Bold, Italic, Underline, Strikethrough,
   H2, H3, CodeView, SingleQuote, DoubleQuote,

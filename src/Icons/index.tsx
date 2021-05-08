@@ -10,7 +10,27 @@ export function Attachment(props: IconProps) {
       <path
         d='M14.828 7.757l-5.656 5.657a1 1 0 1 0 1.414 1.414l5.657-5.656A3 3 0 1 0 12 4.929l-5.657 5.657a5 5 0 1 0 7.071 7.07L19.071 12l1.414 1.414-5.657 5.657a7 7 0 1 1-9.9-9.9l5.658-5.656a5 5 0 0 1 7.07 7.07L12 16.244A3 3 0 1 1 7.757 12l5.657-5.657 1.414 1.414z' />
     </SVGIcon>
-  )
+  );
+}
+
+
+export function ArrowGoBack(props: IconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z'/>
+      <path d='M5.828 7l2.536 2.536L6.95 10.95 2 6l4.95-4.95 1.414 1.414L5.828 5H13a8 8 0 1 1 0 16H4v-2h9a6 6 0 1 0 0-12H5.828z' />
+    </SVGIcon>
+  );
+}
+
+
+export function ArrowGoForward(props: IconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z'/>
+      <path d='M18.172 7H11a6 6 0 1 0 0 12h9v2h-9a8 8 0 1 1 0-16h7.172l-2.536-2.536L17.05 1.05 22 6l-4.95 4.95-1.414-1.414L18.172 7z' />
+    </SVGIcon>
+  );
 }
 
 
@@ -28,8 +48,8 @@ export function Bold(props: IconProps) {
 export function CodeView(props: IconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
-      <path fill='none' d='M0 0h24v24H0z'/>
-      <path d='M16.95 8.464l1.414-1.414 4.95 4.95-4.95 4.95-1.414-1.414L20.485 12 16.95 8.464zm-9.9 0L3.515 12l3.535 3.536-1.414 1.414L.686 12l4.95-4.95L7.05 8.464z'/>
+      <path fill='none' d='M0 0h24v24H0z' />
+      <path d='M16.95 8.464l1.414-1.414 4.95 4.95-4.95 4.95-1.414-1.414L20.485 12 16.95 8.464zm-9.9 0L3.515 12l3.535 3.536-1.414 1.414L.686 12l4.95-4.95L7.05 8.464z' />
     </SVGIcon>
   );
 }
@@ -38,7 +58,7 @@ export function CodeView(props: IconProps) {
 export function Image(props: IconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
-      <path fill='none' d='M0 0h24v24H0z'/>
+      <path fill='none' d='M0 0h24v24H0z' />
       <path d='M4.828 21l-.02.02-.021-.02H2.992A.993.993 0 0 1 2 20.007V3.993A1 1 0 0 1 2.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H4.828zM20 15V5H4v14L14 9l6 6zm0 2.828l-6-6L6.828 19H20v-1.172zM8 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z' />
     </SVGIcon>
   );
@@ -48,8 +68,8 @@ export function Image(props: IconProps) {
 export function Italic(props: IconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
-      <path fill='none' d='M0 0h24v24H0z'/>
-      <path d='M15 20H7v-2h2.927l2.116-12H9V4h8v2h-2.927l-2.116 12H15z'/>
+      <path fill='none' d='M0 0h24v24H0z' />
+      <path d='M15 20H7v-2h2.927l2.116-12H9V4h8v2h-2.927l-2.116 12H15z' />
     </SVGIcon>
   );
 }
@@ -68,7 +88,7 @@ export function Strikethrough(props: IconProps) {
 export function Underline(props: IconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
-      <path fill='none' d='M0 0h24v24H0z'/>
+      <path fill='none' d='M0 0h24v24H0z' />
       <path d='M8 3v9a4 4 0 1 0 8 0V3h2v9a6 6 0 1 1-12 0V3h2zM4 20h16v2H4v-2z' />
     </SVGIcon>
   );
@@ -78,7 +98,7 @@ export function Underline(props: IconProps) {
 export function H1(props: IconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
-      <path fill='none' d='M0 0H24V24H0z'/>
+      <path fill='none' d='M0 0H24V24H0z' />
       <path d='M13 20h-2v-7H4v7H2V4h2v7h7V4h2v16zm8-12v12h-2v-9.796l-2 .536V8.67L19.5 8H21z' />
     </SVGIcon>
   );
@@ -88,8 +108,8 @@ export function H1(props: IconProps) {
 export function H2(props: IconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
-      <path fill='none' d='M0 0H24V24H0z'/>
-      <path d='M4 4v7h7V4h2v16h-2v-7H4v7H2V4h2zm14.5 4c2.071 0 3.75 1.679 3.75 3.75 0 .857-.288 1.648-.772 2.28l-.148.18L18.034 18H22v2h-7v-1.556l4.82-5.546c.268-.307.43-.709.43-1.148 0-.966-.784-1.75-1.75-1.75-.918 0-1.671.707-1.744 1.606l-.006.144h-2C14.75 9.679 16.429 8 18.5 8z'/>
+      <path fill='none' d='M0 0H24V24H0z' />
+      <path d='M4 4v7h7V4h2v16h-2v-7H4v7H2V4h2zm14.5 4c2.071 0 3.75 1.679 3.75 3.75 0 .857-.288 1.648-.772 2.28l-.148.18L18.034 18H22v2h-7v-1.556l4.82-5.546c.268-.307.43-.709.43-1.148 0-.966-.784-1.75-1.75-1.75-.918 0-1.671.707-1.744 1.606l-.006.144h-2C14.75 9.679 16.429 8 18.5 8z' />
     </SVGIcon>
   );
 }
@@ -98,7 +118,7 @@ export function H2(props: IconProps) {
 export function H3(props: IconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
-      <path fill='none' d='M0 0H24V24H0z'/>
+      <path fill='none' d='M0 0H24V24H0z' />
       <path d='M22 8l-.002 2-2.505 2.883c1.59.435 2.757 1.89 2.757 3.617 0 2.071-1.679 3.75-3.75 3.75-1.826 0-3.347-1.305-3.682-3.033l1.964-.382c.156.806.866 1.415 1.718 1.415.966 0 1.75-.784 1.75-1.75s-.784-1.75-1.75-1.75c-.286 0-.556.069-.794.19l-1.307-1.547L19.35 10H15V8h7zM4 4v7h7V4h2v16h-2v-7H4v7H2V4h2z' />
     </SVGIcon>
   );
@@ -108,7 +128,7 @@ export function H3(props: IconProps) {
 export function Link(props: IconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
-      <path fill='none' d='M0 0h24v24H0z'/>
+      <path fill='none' d='M0 0h24v24H0z' />
       <path d='M18.364 15.536L16.95 14.12l1.414-1.414a5 5 0 1 0-7.071-7.071L9.879 7.05 8.464 5.636 9.88 4.222a7 7 0 0 1 9.9 9.9l-1.415 1.414zm-2.828 2.828l-1.415 1.414a7 7 0 0 1-9.9-9.9l1.415-1.414L7.05 9.88l-1.414 1.414a5 5 0 1 0 7.071 7.071l1.414-1.414 1.415 1.414zm-.708-10.607l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07z' />
     </SVGIcon>
   );
@@ -118,7 +138,7 @@ export function Link(props: IconProps) {
 export function LinkUnlink(props: IconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
-      <path fill='none' d='M0 0h24v24H0z'/>
+      <path fill='none' d='M0 0h24v24H0z' />
       <path d='M17.657 14.828l-1.414-1.414L17.657 12A4 4 0 1 0 12 6.343l-1.414 1.414-1.414-1.414 1.414-1.414a6 6 0 0 1 8.485 8.485l-1.414 1.414zm-2.829 2.829l-1.414 1.414a6 6 0 1 1-8.485-8.485l1.414-1.414 1.414 1.414L6.343 12A4 4 0 1 0 12 17.657l1.414-1.414 1.414 1.414zm0-9.9l1.415 1.415-7.071 7.07-1.415-1.414 7.071-7.07zM5.775 2.293l1.932-.518L8.742 5.64l-1.931.518-1.036-3.864zm9.483 16.068l1.931-.518 1.036 3.864-1.932.518-1.035-3.864zM2.293 5.775l3.864 1.036-.518 1.931-3.864-1.035.518-1.932zm16.068 9.483l3.864 1.035-.518 1.932-3.864-1.036.518-1.931z'  />
     </SVGIcon>
   );

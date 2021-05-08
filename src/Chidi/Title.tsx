@@ -1,6 +1,7 @@
 import { css, cx } from '@emotion/css';
 import { ChangeEvent, KeyboardEvent } from 'react';
 
+import { placeholderText } from '../theme';
 
 export interface TitleProps {
   className?: string;
@@ -10,7 +11,6 @@ export interface TitleProps {
 }
 
 const fontStyle = css`
-  color: #333333;
   font-family: inherit;
   font-size: 3rem;
   font-weight: 200;
@@ -20,8 +20,6 @@ const fontStyle = css`
 const rootStyle = css`
   position: relative;
   padding-bottom: 1rem;
-
-  border-bottom: 1px solid #EEEEEE;
 
   ${fontStyle};
 `;
@@ -54,7 +52,7 @@ const textStyle = css`
   color: inherit;
 
   &::placeholder {
-    color: #C1C7CC;
+    color: ${placeholderText};
   }
 `;
 

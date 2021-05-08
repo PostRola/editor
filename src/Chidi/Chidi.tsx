@@ -23,9 +23,12 @@ import Underline from '@tiptap/extension-underline';
 import { EditorContent, useEditor } from '@tiptap/react';
 
 import { useEffect, useState } from 'react';
-import { MainToolbar } from './MainToolbar';
 
+import { placeholderText } from '../theme';
+
+import { MainToolbar } from './MainToolbar';
 import { ContextMenu, MainMenu } from './Menu';
+
 import { Title } from './Title';
 
 export interface ChidiProps {
@@ -34,12 +37,20 @@ export interface ChidiProps {
 
 const rootStyle = css`
   position: relative;
+  display: flex;
   margin: auto;
   max-width: 720px;
+  padding-top: 3rem;
+
+  /* Should be external */
+  min-height: 100vh;
+
+  /* Dark shade: #626975 or #514740 */
+  color: #514740;
 
   .ProseMirror {
     outline: 0;
-    font-size: 1.125rem;
+    font-size: 1.25rem;
 
     p.is-editor-empty:first-child::before {
       content: attr(data-placeholder);
@@ -47,10 +58,31 @@ const rootStyle = css`
       float: left;
 
       pointer-events: none;
-      color: #CED4DA;
+      color: ${placeholderText};
     }
   }
 `;
+
+const toolbarStyle = css`
+  position: sticky;
+  margin-right: 0.5rem;
+  padding-bottom: 8vh;
+  bottom: 0vh;
+
+  align-self: flex-end;
+
+  border-right: 1px solid rgba(193, 182, 172, 0.5);
+
+  @media (min-height: 992px) {
+    padding-bottom: 16vh;
+  }
+`;
+
+const writerStyle = css`
+  padding: 1rem;
+  flex-grow: 1;
+`;
+
 
 export function Chidi(props: ChidiProps) {
 
@@ -95,11 +127,11 @@ export function Chidi(props: ChidiProps) {
 
   return (
     <div className={cx('chidi', rootStyle)}>
-      <Title value={title} onChange={setTitle} onCommit={onCommit} />
-      <MainMenu editor={editor} />
-      {editor && <MainToolbar editor={editor} />}
-      <ContextMenu editor={editor} />
-      <div>
+
+      {editor && <MainToolbar className={toolbarStyle} editor={editor} />}
+
+      <div className={writerStyle}>
+        <Title value={title} onChange={setTitle} onCommit={onCommit} />
         <EditorContent editor={editor} />
       </div>
     </div>
