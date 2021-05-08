@@ -28,6 +28,7 @@ import { placeholderText } from '../theme';
 
 import { MainToolbar } from './MainToolbar';
 import { ContextMenu, MainMenu } from './Menu';
+import { Image } from './tiptap/ImageExtension';
 
 import { Title } from './Title';
 
@@ -102,6 +103,7 @@ export function Chidi(props: ChidiProps) {
       Heading.configure({ levels: [2, 3] }),
       History,
       HorizontalRule,
+      Image,
       Italic,
       ListItem,
       OrderedList,
@@ -125,10 +127,24 @@ export function Chidi(props: ChidiProps) {
     editor?.commands.focus('start');
   };
 
+  const onJSON = () => {
+    console.log(editor?.getJSON());
+  };
+
+  const onHTML = () => {
+    console.log(editor?.getHTML());
+  };
+
   return (
     <div className={cx('chidi', rootStyle)}>
 
       {editor && <MainToolbar className={toolbarStyle} editor={editor} />}
+
+      <div>
+        <button onClick={onJSON}>GetJSON</button>
+        <br/>
+        <button onClick={onHTML}>GetHTML</button>
+      </div>
 
       <div className={writerStyle}>
         <Title value={title} onChange={setTitle} onCommit={onCommit} />
