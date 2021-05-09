@@ -1,9 +1,9 @@
 import { css, cx } from '@emotion/css';
 import { NodeViewContent, NodeViewWrapper } from '@tiptap/react';
 import { useState } from 'react';
-import { BasicChidi } from '../../BasicChidi/BasicChidi';
+import { BasicChidi } from '../BasicChidi/BasicChidi';
 
-import { tide } from '../../theme';
+import { tide } from '../theme';
 
 import { FileInput } from './FileInput';
 import { ImagePreview } from './ImagePreview';

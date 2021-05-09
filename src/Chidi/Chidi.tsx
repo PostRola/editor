@@ -24,11 +24,10 @@ import { EditorContent, useEditor } from '@tiptap/react';
 
 import { useEffect, useState } from 'react';
 
-import { darkTide, placeholderText } from '../theme';
+import { darkTide } from '../theme';
+import { Image } from '../Tiptap/ImageExtension';
 
 import { MainToolbar } from './MainToolbar';
-import { ContextMenu, MainMenu } from './Menu';
-import { Image } from './tiptap/ImageExtension';
 
 import { Title } from './Title';
 

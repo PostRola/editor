@@ -1,9 +1,9 @@
 import { css, cx } from '@emotion/css';
 import { DragEvent, FormEvent, useState } from 'react';
 
-import { Landscape } from '../../Icons';
+import { Landscape } from '../Icons';
 
-import { border, placeholderText, tide, echoBlue, veryThinTide } from '../../theme';
+import { border, placeholderText, tide, echoBlue, veryThinTide } from '../theme';
 
 
 export interface FileInputProps {
