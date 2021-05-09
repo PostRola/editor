@@ -1,6 +1,7 @@
 import { css, cx } from '@emotion/css';
 
 import { Button, ButtonProps } from '../Components/Button';
+import { darkTide, whiteLilac } from '../theme';
 
 
 export interface EditorButtonProps extends ButtonProps {
@@ -15,12 +16,12 @@ const pushStyle = css`
 
   &:focus,
   &:hover {
-    background-color: #F6F5F7;
+    background-color: ${whiteLilac};
   }
 
   &.pushed {
-    color: #A7B3C8;
-    background-color: #F6F5F7;
+    color: ${darkTide};
+    background-color: ${whiteLilac};
   }
 `;
 

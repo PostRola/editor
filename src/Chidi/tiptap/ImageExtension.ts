@@ -18,8 +18,7 @@ export const Image = Node.create<ImageOptions>({
   name: 'chidi-image',
   inline: false,
   group: 'block',
-  content: 'inline*',
-  // atom: true,
+  atom: true,
 
   addAttributes() {
     const attrs: FigureAttrs = {

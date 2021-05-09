@@ -26,7 +26,7 @@ export function ImagePreview(props: ImagePreviewProps) {
   }, [file]);
 
   return (
-    <div contentEditable={false} className={cx('image-preview', className)}>
+    <div className={cx('image-preview', className)}>
       {blobUrl && <img className={imageStyle} src={blobUrl} />}
     </div>
   );

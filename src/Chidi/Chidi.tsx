@@ -24,7 +24,7 @@ import { EditorContent, useEditor } from '@tiptap/react';
 
 import { useEffect, useState } from 'react';
 
-import { placeholderText } from '../theme';
+import { darkTide, placeholderText } from '../theme';
 
 import { MainToolbar } from './MainToolbar';
 import { ContextMenu, MainMenu } from './Menu';
@@ -47,21 +47,7 @@ const rootStyle = css`
   min-height: 100vh;
 
   /* Dark shade: #626975 or #514740 */
-  color: #514740;
-
-  .ProseMirror {
-    outline: 0;
-    font-size: 1.25rem;
-
-    p.is-editor-empty:first-child::before {
-      content: attr(data-placeholder);
-      height: 0;
-      float: left;
-
-      pointer-events: none;
-      color: ${placeholderText};
-    }
-  }
+  color: ${darkTide};
 `;
 
 const toolbarStyle = css`
@@ -82,6 +68,8 @@ const toolbarStyle = css`
 const writerStyle = css`
   padding: 1rem;
   flex-grow: 1;
+
+  font-size: 1.25rem;
 `;
 
 

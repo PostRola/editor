@@ -1,6 +1,7 @@
 import { css, cx } from '@emotion/css';
 import { NodeViewContent, NodeViewWrapper } from '@tiptap/react';
 import { useState } from 'react';
+import { BasicChidi } from '../../BasicChidi/BasicChidi';
 
 import { tide } from '../../theme';
 
@@ -22,6 +23,7 @@ const rootStyle = css`
 const figureStyle = css`
   margin: 0;
 `;
+
 
 export function ImageEditor(props: ImageEditorProps) {
 
@@ -49,7 +51,9 @@ export function ImageEditor(props: ImageEditorProps) {
           {file
             ? <ImagePreview file={file} />
             : <FileInput value={null} onChange={onFileInput} />}
-          <NodeViewContent />
+          <figcaption>
+            <BasicChidi placeholder='Add Image caption' />
+          </figcaption>
         </figure>
       </div>
     </NodeViewWrapper>
