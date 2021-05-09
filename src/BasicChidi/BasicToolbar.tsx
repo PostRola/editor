@@ -31,9 +31,8 @@ const iconStyle = css`
 
   fill: ${tide};
 
-
   &.pushed {
-    transform: scale3d(1.25, 1.25, 1);
+    transform: scale3d(1.4, 1.4, 1);
     fill: #DBC0AF;
   }
 `;

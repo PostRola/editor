@@ -19,7 +19,7 @@ const style = css`
 
 export function SVGIcon(props: SVGIconProps) {
   return (
-    <svg viewBox={props.viewBox} className={cx(style, props.className)}>
+    <svg viewBox={props.viewBox} className={cx(style, 'svg-icon', props.className)}>
       {props.children}
     </svg>
   );

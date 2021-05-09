@@ -3,11 +3,10 @@ import { DragEvent, FormEvent, useState } from 'react';
 
 import { Landscape } from '../Icons';
 
-import { border, placeholderText, tide, echoBlue, veryThinTide } from '../theme';
+import { placeholderText, tide, echoBlue, veryThinTide } from '../theme';
 
 
 export interface FileInputProps {
-  value: File | null;
   onChange: (files: FileList) => void;
 }
 
@@ -17,8 +16,6 @@ const labelStyle = css`
   position: relative;
   padding: 1rem;
 
-  border: 2px dashed ${border};
-
   font-size: 1rem;
   cursor: pointer;
 
@@ -26,15 +23,14 @@ const labelStyle = css`
 
   &:hover {
     background: ${veryThinTide};
+
+    .landscape {
+      transform: scale3d(1.15, 1.15, 1);
+    }
   }
 
   &.activeDrop {
     background: #F0F0F0;
-    border-color: ${tide};
-  }
-
-  &:focus-within {
-    border-color: ${tide};
   }
 
   [type='file'] {
@@ -65,6 +61,8 @@ const iconStyle = css`
   width: 4rem;
   height: 4rem;
 
+  transition: all 180ms ease-out;
+
   color: ${placeholderText};
 `;
 
@@ -88,7 +86,7 @@ const subTitleStyle = css`
 
 export function FileInput(props: FileInputProps) {
 
-  const { value, onChange } = props;
+  const { onChange } = props;
 
   const [isDrop, setIsDrop] = useState(false);
 
@@ -120,11 +118,11 @@ export function FileInput(props: FileInputProps) {
   const onDragLeave = () => setIsDrop(false);
 
   return (
-    <label contentEditable={false} className={cx(labelStyle, isDrop && 'activeDrop')}
+    <label className={cx(labelStyle, isDrop && 'activeDrop')}
       onDrop={onDrop} onDragOver={onDropOver} onDragLeave={onDragLeave}>
         <input type='file' onInput={onFileInput} />
         <div className={containerStyle}>
-          <Landscape className={cx(iconStyle)} />
+          <Landscape className={cx('landscape', iconStyle)} />
           <div className={titleStyle}>
             <span>Drop your image here, or </span>
             <span className={offsetStyle}>Browse</span>

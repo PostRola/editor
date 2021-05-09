@@ -1,8 +1,9 @@
 import { Node } from '@tiptap/core';
 import { Command, ReactNodeViewRenderer } from '@tiptap/react';
 
-import { ImageEditor } from './ImageEditor';
+import { ImageEditorNode } from './ImageEditorNode';
 import { Figure, FigureAttrs } from './Type';
+
 
 export interface ImageOptions {}
 
@@ -30,6 +31,9 @@ export const Image = Node.create<ImageOptions>({
       },
       alt: {
         default: null
+      },
+      size: {
+        default: null
       }
     };
 
@@ -45,7 +49,7 @@ export const Image = Node.create<ImageOptions>({
   },
 
   addNodeView() {
-    return ReactNodeViewRenderer(ImageEditor);
+    return ReactNodeViewRenderer(ImageEditorNode);
   },
 
   addCommands() {

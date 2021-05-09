@@ -25,6 +25,7 @@ import { EditorContent, useEditor } from '@tiptap/react';
 import { useEffect, useState } from 'react';
 
 import { darkTide } from '../theme';
+import { ImageEditor } from '../Tiptap/ImageEditor';
 import { Image } from '../Tiptap/ImageExtension';
 
 import { MainToolbar } from './MainToolbar';
@@ -67,6 +68,7 @@ const toolbarStyle = css`
 const writerStyle = css`
   padding: 1rem;
   flex-grow: 1;
+  min-width: 0;
 
   font-size: 1.25rem;
 `;

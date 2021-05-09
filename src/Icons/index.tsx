@@ -27,8 +27,28 @@ export function ArrowGoBack(props: IconProps) {
 export function ArrowGoForward(props: IconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
-      <path fill='none' d='M0 0h24v24H0z'/>
+      <path fill='none' d='M0 0h24v24H0z' />
       <path d='M18.172 7H11a6 6 0 1 0 0 12h9v2h-9a8 8 0 1 1 0-16h7.172l-2.536-2.536L17.05 1.05 22 6l-4.95 4.95-1.414-1.414L18.172 7z' />
+    </SVGIcon>
+  );
+}
+
+
+export function ArrowLeftS(props: IconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z'/>
+      <path d='M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z'/>
+    </SVGIcon>
+  );
+}
+
+
+export function ArrowRightS(props: IconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z' />
+      <path d='M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z' />
     </SVGIcon>
   );
 }
@@ -45,6 +65,16 @@ export function Bold(props: IconProps) {
 }
 
 
+export function Close(props: IconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z'/>
+      <path d='M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z'/>
+    </SVGIcon>
+  );
+}
+
+
 export function CodeView(props: IconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
@@ -55,11 +85,31 @@ export function CodeView(props: IconProps) {
 }
 
 
+export function DeleteBin2(props: IconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z'/>
+      <path d='M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-4.586 6l1.768 1.768-1.414 1.414L12 15.414l-1.768 1.768-1.414-1.414L10.586 14l-1.768-1.768 1.414-1.414L12 12.586l1.768-1.768 1.414 1.414L13.414 14zM9 4v2h6V4H9z'/>
+    </SVGIcon>
+  );
+}
+
+
 export function Image(props: IconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z' />
       <path d='M4.828 21l-.02.02-.021-.02H2.992A.993.993 0 0 1 2 20.007V3.993A1 1 0 0 1 2.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 0 1-.992.993H4.828zM20 15V5H4v14L14 9l6 6zm0 2.828l-6-6L6.828 19H20v-1.172zM8 11a2 2 0 1 1 0-4 2 2 0 0 1 0 4z' />
+    </SVGIcon>
+  );
+}
+
+
+export function Information(props: IconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z'/>
+      <path d='M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z'/>
     </SVGIcon>
   );
 }
@@ -179,6 +229,16 @@ export function SingleQuote(props: IconProps) {
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z'/>
       <path d='M9.583 17.321C8.553 16.227 8 15 8 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z' />
+    </SVGIcon>
+  );
+}
+
+
+export function Substract(props: IconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z'/>
+      <path d='M5 11h14v2H5z'/>
     </SVGIcon>
   );
 }
