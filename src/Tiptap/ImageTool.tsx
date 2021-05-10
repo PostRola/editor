@@ -10,16 +10,17 @@ import { ImageSize } from './Type';
 export interface ImageToolsProps {
   isImage: boolean;
   isAlt: boolean;
-  state: ImageSize;
+  isSelected: boolean;
+  size: ImageSize;
   onAltToggle: () => void;
-  onState: (state: ImageSize) => void;
+  onSize: (state: ImageSize) => void;
   onRemove: () => void;
 }
 
 const altStyle = css`
   position: absolute;
   padding: 2px 4px;
-  bottom: 0.75rem;
+  bottom: 14px;
   right: 1rem;
 
   border: 1px solid #C1B6AC;
@@ -32,16 +33,26 @@ const altStyle = css`
 const panelStyle = css`
   position: absolute;
   display: grid;
+
   top: 1rem;
   right: 1rem;
 
-  grid-template-columns: auto auto;
-  grid-gap: 0.5rem;
+  grid-gap: 1rem;
+
+  &.isImage {
+    top: -1.5rem;
+    left: 50%;
+    right: initial;
+
+    grid-template-columns: auto auto;
+
+    transform: translateX(-50%);
+  }
 `;
 
-const actionStyle = css`
-  width: 1.125rem;
-  height: 1.125rem;
+const closeStyle = css`
+  width: 1.25rem;
+  height: 1.25rem;
 
   transition: all 180ms ease-out;
 
@@ -58,23 +69,25 @@ const actionStyle = css`
 
 export function ImageTools(props: ImageToolsProps) {
 
-  const { isImage, isAlt, state, onState, onAltToggle, onRemove } = props;
+  const { isImage, isAlt, isSelected, size, onSize, onAltToggle, onRemove } = props;
 
   return (
     <div>
-      <div className='test'></div>
       <Button variant={'minimal'} className={altStyle}
         onClick={onAltToggle}>
           Alt
       </Button>
-      <div className={panelStyle}>
-        <SizeButton isImage={isImage}
-          state={state} onToggle={onState} />
-        <Button variant={'minimal'}
-          className={cx(actionStyle, isImage && 'active')}
-          onClick={onRemove}>
-            <Close />
-        </Button>
+      <div className={cx(panelStyle, isImage && 'isImage')}>
+        {isImage && isSelected && (
+          <SizeButton isImage={isImage}
+            state={size} onToggle={onSize} />)}
+
+        {(!isImage || (isImage && isSelected)) && (
+          <Button variant={'minimal'}
+            className={cx(closeStyle, isImage && 'active')}
+            onClick={onRemove}>
+              <Close />
+          </Button>)}
       </div>
     </div>
   );
@@ -89,7 +102,7 @@ export interface SizeButtonProps extends ButtonProps {
 
 const sizeButtonStyle = css`
   width: 3rem;
-  height: 1.125rem;
+  height: 1.25rem;
 
   border-radius: 4px;
 
@@ -151,6 +164,7 @@ export function SizeButton(props: SizeButtonProps) {
   const modified = { ...props } as Partial<SizeButtonProps>;
   delete modified.state;
   delete modified.onToggle;
+  delete modified.isImage;
 
   const onClick = () => {
     onToggle(state === 'standard' ? 'wide' : state === 'wide' ? 'fullwidth' : 'standard');

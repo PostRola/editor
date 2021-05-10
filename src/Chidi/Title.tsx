@@ -14,7 +14,7 @@ const fontStyle = css`
   font-family: inherit;
   font-size: 3rem;
   font-weight: 200;
-  line-height: 1.15em;
+  line-height: 1.15;
 `;
 
 const rootStyle = css`
@@ -53,6 +53,7 @@ const textStyle = css`
 
   &::placeholder {
     color: ${placeholderText};
+    font-weight: 500;
   }
 `;
 

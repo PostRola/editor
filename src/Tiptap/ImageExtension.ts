@@ -24,16 +24,16 @@ export const Image = Node.create<ImageOptions>({
   addAttributes() {
     const attrs: FigureAttrs = {
       src: {
-        default: null,
+        default: '',
       },
       caption: {
-        default: null
+        default: ''
       },
       alt: {
-        default: null
+        default: ''
       },
       size: {
-        default: null
+        default: 'standard'
       }
     };
 

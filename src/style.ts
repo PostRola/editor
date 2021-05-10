@@ -12,7 +12,8 @@ injectGlobal`
   }
 
   body {
-    margin: 0
+    margin: 0;
+    line-height: 1.25;
   }
 
   .ProseMirror {

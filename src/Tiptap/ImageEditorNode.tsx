@@ -7,8 +7,10 @@ import { Figure } from './Type';
 export interface ImageEditorNodeProps {
   editor: Editor;
   node: {
-    attrs: Partial<Figure>;
+    attrs: Figure;
+    nodeSize: number;
   };
+  getPos: () => number;
   selected: boolean;
   updateAttributes: (attr: Partial<Figure>) => void;
 }
@@ -19,14 +21,23 @@ const nodeGapStyle = css`
 
 export function ImageEditorNode(props: ImageEditorNodeProps) {
 
-  console.log(props.selected);
+  console.log(props);
 
-  const { node, updateAttributes, selected } = props;
+  const { editor, getPos, node, updateAttributes, selected } = props;
+
+  const onRemove = () => {
+    const transaction = editor.view.state.tr;
+    const position = getPos();
+
+    transaction.delete(position, position + node.nodeSize);
+    editor.view.dispatch(transaction);
+  };
 
   return (
     <NodeViewWrapper>
       <ImageEditor className={nodeGapStyle} selected={selected}
-        figure={node.attrs} update={updateAttributes} />
+        figure={node.attrs} onFigure={updateAttributes}
+        onRemove={onRemove} />
     </NodeViewWrapper>
   );
 }

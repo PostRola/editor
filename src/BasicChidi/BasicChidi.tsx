@@ -17,6 +17,7 @@ import { BasicContextMenu } from './BasicToolbar';
 
 
 export interface BasicChidiProps {
+  className?: string;
   placeholder?: string
 }
 
@@ -37,7 +38,7 @@ const toolbarStyle = css`
 
 export function BasicChidi(props: BasicChidiProps) {
 
-  const { placeholder } = props;
+  const { className, placeholder } = props;
 
   const editor = useEditor({
     extensions: [
@@ -66,7 +67,7 @@ export function BasicChidi(props: BasicChidiProps) {
   };
 
   return (
-    <div className={cx('basic-chidi', rootStyle)}>
+    <div className={cx('basic-chidi', rootStyle, className)}>
 
       {editor && <BasicContextMenu className={toolbarStyle} editor={editor} />}
       <EditorContent editor={editor} />

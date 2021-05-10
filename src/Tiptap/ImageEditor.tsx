@@ -1,22 +1,21 @@
 import { css, cx } from '@emotion/css';
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 
 import { BasicChidi } from '../BasicChidi/BasicChidi';
-import { Button } from '../Components/Button';
-import { Information } from '../Icons';
-import { tide, veryThinTide } from '../theme';
+import { placeholderText, tide, veryThinTide } from '../theme';
 
 import { FileInput } from './FileInput';
 import { ImagePreview, useLocalImage } from './ImagePreview';
 import { ImageTools } from './ImageTool';
-import { Figure } from './Type';
+import { Figure, ImageSize } from './Type';
 
 
 export interface ImageEditorProps {
   className?: string;
   selected?: boolean;
-  figure: Partial<Figure>;
-  update: (figure: Partial<Figure>) => void;
+  figure: Figure;
+  onFigure: (figure: Figure) => void;
+  onRemove: () => void;
 }
 
 
@@ -24,7 +23,7 @@ const extensions = new Set(['image/png', 'image/jpeg', 'image/gif']);
 
 const rootStyle = css`
   position: relative;
-  padding: 1rem 1rem 1px;
+  padding: 1rem;
 
   &:hover {
     box-shadow: 0 0 0 1px ${tide};
@@ -48,19 +47,48 @@ const figureStyle = css`
 const captionStyle = css`
   font-weight: 500;
 
-  margin: 0.5rem 2rem 0.75rem 0;
+  margin: 0.75rem 2rem 0 0;
 
-  /* Silent the prose mirror p tag warning. */
+  /* Silent the prose mirror p tag margins. */
   p {
     margin: 0;
   }
 `;
 
+const altTextStyle = css`
+  display: none;
+  padding: 0;
+  width: 100%;
+
+  background: transparent;
+  border: 0;
+
+  line-height: 1.25;
+  font-size: 0.875rem;
+  outline: none;
+
+  color: inherit;
+  font-family: inherit;
+
+  &::placeholder {
+    color: ${placeholderText};
+  }
+`;
+
+const block = css`
+  display: block;
+`;
+
+const none = css`
+  display: none;
+`;
+
 
 export function ImageEditor(props: ImageEditorProps) {
 
-  const { className, selected } = props;
+  const { className, selected, figure, onFigure, onRemove } = props;
 
+  const [isAlt, setIsAlt] = useState(false);
   const [file, setFile] = useState<File | null>(null);
   const { isValid, url } = useLocalImage({ file });
 
@@ -84,11 +112,12 @@ export function ImageEditor(props: ImageEditorProps) {
     return;
   };
 
-  // Tell editor to remove this image node.
-  const onRemove = () => {};
+  const onAltToggle = () => setIsAlt(!isAlt);
+  const onSize = (size: ImageSize) => onFigure({ ...figure, size });
 
-  const onAltToggle = () => {};
-  const onState = () => {};
+  const onAlt = (e: FormEvent<HTMLInputElement>) => {
+    onFigure({ ...figure, alt: (e.target as HTMLInputElement).value });
+  };
 
   const isValidImage = isValid && url;
 
@@ -106,14 +135,16 @@ export function ImageEditor(props: ImageEditorProps) {
           ? <ImagePreview url={url!} />
           : <FileInput onChange={onFileInput} />}
         <figcaption className={captionStyle}>
-          <BasicChidi placeholder='Add image caption' />
+          <input className={cx(altTextStyle, isAlt && block)} type='text'
+            placeholder='Add image description (alt text)'
+            value={figure.alt} onInput={onAlt} />
+          <BasicChidi className={isAlt ? none : block} placeholder='Add image caption' />
         </figcaption>
       </figure>
-      <div>
-        <ImageTools onRemove={onRemove} isImage={!!isValidImage}
-          isAlt={false} onAltToggle={onAltToggle}
-          state={'standard'} onState={onState} />
-      </div>
+      <ImageTools onRemove={onRemove}
+        isImage={!!isValidImage} isSelected={!!selected}
+        isAlt={isAlt} onAltToggle={onAltToggle}
+        size={figure.size} onSize={onSize} />
     </div>
   );
 }

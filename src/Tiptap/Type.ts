@@ -4,8 +4,8 @@ export type ImageSize = 'standard' | 'wide' | 'fullwidth';
 
 export interface Figure {
   src: string;
-  caption?: string;
-  alt?: string;
+  caption: string;
+  alt: string;
   size: ImageSize;
 }
 
