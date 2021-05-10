@@ -9,16 +9,17 @@ import Placeholder from '@tiptap/extension-placeholder';
 import Text from '@tiptap/extension-text';
 import { EditorContent, useEditor } from '@tiptap/react';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
-import { placeholderText } from '../theme';
+import { BasicChidiDoc } from '../EditorBase/Type';
 
 import { BasicContextMenu } from './BasicToolbar';
 
 
 export interface BasicChidiProps {
   className?: string;
-  placeholder?: string
+  placeholder?: string;
+  onChange?: (content: BasicChidiDoc) => void;
 }
 
 const rootStyle = css`
@@ -38,7 +39,7 @@ const toolbarStyle = css`
 
 export function BasicChidi(props: BasicChidiProps) {
 
-  const { className, placeholder } = props;
+  const { className, placeholder, onChange } = props;
 
   const editor = useEditor({
     extensions: [
@@ -55,6 +56,8 @@ export function BasicChidi(props: BasicChidiProps) {
     content: ''
   });
 
+  // TODO: For validation purpose
+  // editor.schema.nodeFromJSON(content);
 
   useEffect(() => {
     return () => {
@@ -62,14 +65,10 @@ export function BasicChidi(props: BasicChidiProps) {
     };
   }, [editor]);
 
-  const onCommit = () => {
-    editor?.commands.focus('start');
-  };
-
   return (
     <div className={cx('basic-chidi', rootStyle, className)}>
-
-      {editor && <BasicContextMenu className={toolbarStyle} editor={editor} />}
+      {editor && (
+        <BasicContextMenu className={toolbarStyle} editor={editor} />)}
       <EditorContent editor={editor} />
     </div>
   );

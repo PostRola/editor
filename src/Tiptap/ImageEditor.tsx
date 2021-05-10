@@ -7,14 +7,14 @@ import { placeholderText, tide, veryThinTide } from '../theme';
 import { FileInput } from './FileInput';
 import { ImagePreview, useLocalImage } from './ImagePreview';
 import { ImageTools } from './ImageTool';
-import { Figure, ImageSize } from './Type';
+import { ImageAttrs, ImageSize } from '../EditorBase/Type';
 
 
 export interface ImageEditorProps {
   className?: string;
   selected?: boolean;
-  figure: Figure;
-  onFigure: (figure: Figure) => void;
+  figure: ImageAttrs;
+  onFigure: (figure: ImageAttrs) => void;
   onRemove: () => void;
 }
 

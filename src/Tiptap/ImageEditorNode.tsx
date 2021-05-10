@@ -2,17 +2,17 @@ import { css } from '@emotion/css';
 import { Editor, NodeViewWrapper } from '@tiptap/react';
 
 import { ImageEditor } from './ImageEditor';
-import { Figure } from './Type';
+import { ImageAttrs } from '../EditorBase/Type';
 
 export interface ImageEditorNodeProps {
   editor: Editor;
   node: {
-    attrs: Figure;
+    attrs: ImageAttrs;
     nodeSize: number;
   };
   getPos: () => number;
   selected: boolean;
-  updateAttributes: (attr: Partial<Figure>) => void;
+  updateAttributes: (attr: ImageAttrs) => void;
 }
 
 const nodeGapStyle = css`

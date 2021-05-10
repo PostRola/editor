@@ -1,16 +1,18 @@
-import { Node } from '@tiptap/core';
+import { Attribute, Node } from '@tiptap/core';
 import { Command, ReactNodeViewRenderer } from '@tiptap/react';
 
 import { ImageEditorNode } from './ImageEditorNode';
-import { Figure, FigureAttrs } from './Type';
+import { ImageAttrs } from '../EditorBase/Type';
 
 
 export interface ImageOptions {}
 
+type ExtensionAttrs = { [key in keyof ImageAttrs]: Partial<Attribute>; };
+
 declare module '@tiptap/core' {
   interface Commands {
     image: {
-      setImage: (option: Figure) => Command;
+      setImage: (option: ImageAttrs) => Command;
     }
   }
 }
@@ -22,7 +24,7 @@ export const Image = Node.create<ImageOptions>({
   atom: true,
 
   addAttributes() {
-    const attrs: FigureAttrs = {
+    const attrs: ExtensionAttrs = {
       src: {
         default: '',
       },
