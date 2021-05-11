@@ -1,8 +1,6 @@
 import { css, cx } from '@emotion/css';
 
 import { Button, ButtonProps } from '../Components/Button';
-import { darkTide, whiteLilac } from '../theme';
-
 
 export interface ContextButtonProps extends ButtonProps {
 }

@@ -4,7 +4,7 @@ import { Button, ButtonProps } from '../Components/Button';
 import { ArrowLeftS, ArrowRightS, Close, Substract } from '../Icons';
 import { tide } from '../theme';
 
-import { ImageSize } from './Type';
+import { ImageSize } from '../EditorBase/Type';
 
 
 export interface ImageToolsProps {
@@ -23,11 +23,19 @@ const altStyle = css`
   bottom: 14px;
   right: 1rem;
 
-  border: 1px solid #C1B6AC;
+  border: 1px solid currentColor;
   border-radius: 2px;
 
   font-size: 0.75rem;
-  color: #C1B6AC;
+  font-weight: 500;
+  color: ${tide};
+
+  &.active {
+    /* background: ${tide}; */
+    color: #586477;
+    border-color: currentColor;
+    background: #E6E5E7;
+  }
 `;
 
 const panelStyle = css`
@@ -73,7 +81,7 @@ export function ImageTools(props: ImageToolsProps) {
 
   return (
     <div>
-      <Button variant={'minimal'} className={altStyle}
+      <Button variant={'minimal'} className={cx(altStyle, isAlt && 'active')}
         onClick={onAltToggle}>
           Alt
       </Button>

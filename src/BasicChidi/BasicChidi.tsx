@@ -4,9 +4,12 @@ import Bold from '@tiptap/extension-bold';
 import Document from '@tiptap/extension-document';
 import History from '@tiptap/extension-history';
 import Italic from '@tiptap/extension-italic';
+import Link from '@tiptap/extension-link';
 import Paragraph from '@tiptap/extension-paragraph';
 import Placeholder from '@tiptap/extension-placeholder';
+import Strike from '@tiptap/extension-strike';
 import Text from '@tiptap/extension-text';
+import Underline from '@tiptap/extension-underline';
 import { EditorContent, useEditor } from '@tiptap/react';
 
 import { useEffect } from 'react';
@@ -49,9 +52,12 @@ export function BasicChidi(props: BasicChidiProps) {
       Bold,
       History,
       Italic,
+      Link.configure({ openOnClick: false }),
       Paragraph,
       Placeholder.configure({ placeholder }),
-      Text
+      Strike,
+      Text,
+      Underline
     ],
     content: ''
   });
