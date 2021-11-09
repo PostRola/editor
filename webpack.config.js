@@ -48,9 +48,10 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: SITE_DIST,
+    historyApiFallback: true,
     port: 8080,
-    historyApiFallback: true
+    static: {
+      directory: SITE_DIST,
+    }
   }
-
 };
