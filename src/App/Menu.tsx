@@ -1,7 +1,7 @@
 import { css, cx } from '@emotion/css';
 
 import { GirlFace } from '../Icon/logo';
-import { veryThinTide } from '../theme';
+import { darkTide, veryThinTide } from '../theme';
 
 
 export interface MenuProps {}
@@ -12,13 +12,16 @@ const menuS = css`
 `;
 
 const logoS = css`
-  width: 80px;
-  height: 57px;
+  width: 57px;
+  height: 48px;
+
+  color: ${darkTide};
 `;
 
 const containerS = css`
   max-width: 1440px;
   margin: 0 auto;
+  padding: 0.25rem;
 `;
 
 export function Menu(props: MenuProps) {
