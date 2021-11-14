@@ -129,11 +129,11 @@ export function Chidi(props: ChidiProps) {
 
       {editor && <MainToolbar className={toolbarStyle} editor={editor} />}
 
-      <div>
+      {/* <div>
         <button onClick={onJSON}>GetJSON</button>
         <br/>
         <button onClick={onHTML}>GetHTML</button>
-      </div>
+      </div> */}
 
       <div className={writerStyle}>
         <Title value={title} onChange={setTitle} onCommit={onCommit} />

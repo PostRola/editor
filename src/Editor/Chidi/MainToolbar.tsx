@@ -7,7 +7,7 @@ import {
   H2, H3, CodeView, Image, DoubleQuote,
   ListOrdered, ListUnordered, Attachment,
   ArrowGoBack, ArrowGoForward
- } from '../../Icons';
+ } from '../../Icon';
 
 export interface MainToolbarProps {
   className?: string;
@@ -68,7 +68,9 @@ export function MainToolbar(props: MainToolbarProps) {
   const onUndo = () => editor.chain().focus().undo().run();
   const onRedo = () => editor.chain().focus().redo().run();
 
-  const onImage = () => editor.chain().focus().setImage({ src: 'https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80' }).run();
+  const onImage = () => editor.chain().focus()
+    .setImage({ src: 'https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80' })
+    .run();
 
   return (
     <div className={cx('toolbar', rootStyle, className)}>

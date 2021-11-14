@@ -1,7 +1,7 @@
 import { css, cx } from '@emotion/css';
 
 import { Button, ButtonProps } from '../../Components/Button';
-import { ArrowLeftS, ArrowRightS, Close, Substract } from '../../Icons';
+import { ArrowLeftS, ArrowRightS, Close, Substract } from '../../Icon';
 import { tide } from '../../theme';
 
 import { ImageSize } from '../Type';
