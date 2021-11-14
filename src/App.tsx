@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { NewPost } from './Post/NewPost';
 
@@ -6,11 +6,9 @@ import { NewPost } from './Post/NewPost';
 export function App() {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path='/new'>
-          <NewPost />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path='/new' element={<NewPost />} />
+      </Routes>
     </BrowserRouter>
   );
 }
