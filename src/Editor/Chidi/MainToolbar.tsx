@@ -7,7 +7,7 @@ import {
   H2, H3, CodeView, Image, DoubleQuote,
   ListOrdered, ListUnordered, Attachment,
   ArrowGoBack, ArrowGoForward
- } from '../Icons';
+ } from '../../Icons';
 
 export interface MainToolbarProps {
   className?: string;

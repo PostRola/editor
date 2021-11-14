@@ -24,7 +24,7 @@ import { EditorContent, useEditor } from '@tiptap/react';
 
 import { useEffect, useState } from 'react';
 
-import { darkTide } from '../theme';
+import { darkTide } from '../../theme';
 import { ImageEditor } from '../Tiptap/ImageEditor';
 import { Image } from '../Tiptap/ImageExtension';
 

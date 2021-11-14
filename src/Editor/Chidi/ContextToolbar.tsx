@@ -6,7 +6,7 @@ import {
   Bold, Italic, Underline, Strikethrough,
   H2, H3, CodeView, SingleQuote, DoubleQuote,
   ListOrdered, ListUnordered
- } from '../Icons';
+ } from '../../Icons';
 
 export interface ContextToolbarProps {
   className?: string;

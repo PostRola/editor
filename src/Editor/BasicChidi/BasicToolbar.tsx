@@ -3,8 +3,8 @@ import { BubbleMenu, Editor } from '@tiptap/react';
 import { KeyboardEvent, useState } from 'react';
 import type { Props } from 'tippy.js';
 
-import { Bold, Check, Italic, Link, LinkUnlink, Strikethrough, Underline } from '../Icons';
-import { placeholderText, tide } from '../theme';
+import { Bold, Check, Italic, Link, LinkUnlink, Strikethrough, Underline } from '../../Icons';
+import { placeholderText, tide } from '../../theme';
 import { ContextButton } from './ContextButton';
 
 

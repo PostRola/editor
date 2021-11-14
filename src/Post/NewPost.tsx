@@ -1,6 +1,6 @@
 import { cx } from '@emotion/css';
 
-import { Chidi } from '../Chidi/Chidi';
+import { Chidi } from '../Editor/Chidi/Chidi';
 
 
 export function NewPost() {

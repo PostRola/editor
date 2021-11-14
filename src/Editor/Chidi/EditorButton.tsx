@@ -1,7 +1,7 @@
 import { css, cx } from '@emotion/css';
 
-import { Button, ButtonProps } from '../Components/Button';
-import { darkTide, whiteLilac } from '../theme';
+import { Button, ButtonProps } from '../../Components/Button';
+import { darkTide, whiteLilac } from '../../theme';
 
 
 export interface EditorButtonProps extends ButtonProps {

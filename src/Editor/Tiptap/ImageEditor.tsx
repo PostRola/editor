@@ -2,12 +2,12 @@ import { css, cx } from '@emotion/css';
 import { FormEvent, useEffect, useState } from 'react';
 
 import { BasicChidi } from '../BasicChidi/BasicChidi';
-import { placeholderText, tide, veryThinTide } from '../theme';
+import { placeholderText, tide, veryThinTide } from '../../theme';
 
 import { FileInput } from './FileInput';
 import { ImagePreview, useLocalImage } from './ImagePreview';
 import { ImageTools } from './ImageTool';
-import { ImageAttrs, ImageSize } from '../EditorBase/Type';
+import { ImageAttrs, ImageSize } from '../Type';
 
 
 export interface ImageEditorProps {

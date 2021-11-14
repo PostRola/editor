@@ -14,7 +14,7 @@ import { EditorContent, useEditor } from '@tiptap/react';
 
 import { useEffect } from 'react';
 
-import { BasicChidiDoc } from '../EditorBase/Type';
+import { BasicChidiDoc } from '../Type';
 
 import { BasicContextMenu } from './BasicToolbar';
 

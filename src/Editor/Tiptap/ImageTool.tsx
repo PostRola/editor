@@ -1,10 +1,10 @@
 import { css, cx } from '@emotion/css';
 
-import { Button, ButtonProps } from '../Components/Button';
-import { ArrowLeftS, ArrowRightS, Close, Substract } from '../Icons';
-import { tide } from '../theme';
+import { Button, ButtonProps } from '../../Components/Button';
+import { ArrowLeftS, ArrowRightS, Close, Substract } from '../../Icons';
+import { tide } from '../../theme';
 
-import { ImageSize } from '../EditorBase/Type';
+import { ImageSize } from '../Type';
 
 
 export interface ImageToolsProps {

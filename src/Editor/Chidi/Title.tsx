@@ -1,7 +1,7 @@
 import { css, cx } from '@emotion/css';
 import { ChangeEvent, KeyboardEvent } from 'react';
 
-import { placeholderText } from '../theme';
+import { placeholderText } from '../../theme';
 
 export interface TitleProps {
   className?: string;

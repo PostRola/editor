@@ -2,7 +2,7 @@ import { css } from '@emotion/css';
 import { Editor, NodeViewWrapper } from '@tiptap/react';
 
 import { ImageEditor } from './ImageEditor';
-import { ImageAttrs } from '../EditorBase/Type';
+import { ImageAttrs } from '../Type';
 
 export interface ImageEditorNodeProps {
   editor: Editor;

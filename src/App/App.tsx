@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { NewPost } from './Post/NewPost';
+import { NewPost } from '../Post/NewPost';
 
 
 export function App() {

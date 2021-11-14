@@ -2,7 +2,7 @@ import { Attribute, Node } from '@tiptap/core';
 import { Command, ReactNodeViewRenderer } from '@tiptap/react';
 
 import { ImageEditorNode } from './ImageEditorNode';
-import { ImageAttrs } from '../EditorBase/Type';
+import { ImageAttrs } from '../Type';
 
 
 export interface ImageOptions {}

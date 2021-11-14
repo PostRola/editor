@@ -1,4 +1,5 @@
 import { injectGlobal } from '@emotion/css';
+
 import { placeholderText, tide } from './theme';
 
 import 'tippy.js/dist/tippy.css';
