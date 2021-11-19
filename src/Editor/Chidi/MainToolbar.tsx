@@ -14,16 +14,12 @@ export interface MainToolbarProps {
   editor: Editor;
 }
 
-const rootStyle = css`
+const rootS = css`
   display: flex;
-  flex-direction: column;
 `;
 
-const rowStyle = css`
+const rowS = css`
   display: flex;
-  flex-direction: column;
-
-  margin-top: 1rem;
 `;
 
 const buttonStyle = css`
@@ -73,8 +69,8 @@ export function MainToolbar(props: MainToolbarProps) {
     .run();
 
   return (
-    <div className={cx('toolbar', rootStyle, className)}>
-      <div className={rowStyle}>
+    <div className={cx('toolbar', rootS, className)}>
+      <div className={rowS}>
         <EditorButton className={buttonStyle}
           pushed={isH2} onClick={onH2}>
             <H2 className={iconStyle} />
@@ -107,7 +103,7 @@ export function MainToolbar(props: MainToolbarProps) {
         </EditorButton>
       </div>
 
-      <div className={rowStyle}>
+      <div className={rowS}>
         <EditorButton className={cx(buttonStyle, edgeStyle)}
             pushed={isBold} onClick={onBold}>
               <Bold className={iconStyle} />
@@ -126,7 +122,7 @@ export function MainToolbar(props: MainToolbarProps) {
         </EditorButton>
       </div>
 
-      <div className={rowStyle}>
+      <div className={rowS}>
         <EditorButton className={buttonStyle} onClick={onUndo}>
           <ArrowGoBack className={iconStyle} />
         </EditorButton>

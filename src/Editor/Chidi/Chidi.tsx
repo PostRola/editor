@@ -25,7 +25,6 @@ import { EditorContent, useEditor } from '@tiptap/react';
 import { useEffect, useState } from 'react';
 
 import { darkTide } from '../../theme';
-import { ImageEditor } from '../Tiptap/ImageEditor';
 import { Image } from '../Tiptap/ImageExtension';
 
 import { MainToolbar } from './MainToolbar';
@@ -36,33 +35,15 @@ export interface ChidiProps {
 
 }
 
-const rootStyle = css`
+const rootS = css`
   position: relative;
-  display: flex;
-  margin: auto;
-  max-width: 720px;
   padding-top: 3rem;
-
-  /* Should be external */
-  min-height: 100vh;
 
   /* Dark shade: #626975 or #514740 */
   color: ${darkTide};
 `;
 
-const toolbarStyle = css`
-  position: sticky;
-  margin-right: 0.5rem;
-  padding-bottom: 8vh;
-  bottom: 0vh;
-
-  align-self: flex-end;
-
-  border-right: 1px solid rgba(193, 182, 172, 0.5);
-
-  @media (min-height: 992px) {
-    padding-bottom: 16vh;
-  }
+const toolbarS = css`
 `;
 
 const writerStyle = css`
@@ -125,9 +106,9 @@ export function Chidi(props: ChidiProps) {
   };
 
   return (
-    <div className={cx('chidi', rootStyle)}>
+    <div className={cx('chidi', rootS)}>
 
-      {editor && <MainToolbar className={toolbarStyle} editor={editor} />}
+      {editor && <MainToolbar className={toolbarS} editor={editor} />}
 
       {/* <div>
         <button onClick={onJSON}>GetJSON</button>

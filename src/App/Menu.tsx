@@ -1,35 +1,51 @@
 import { css, cx } from '@emotion/css';
+import { Link } from 'react-router-dom';
 
-import { GirlFace } from '../Icon/logo';
-import { darkTide, veryThinTide } from '../theme';
-
-
-export interface MenuProps {}
+import { Rano } from '../Icon/logo';
+import { darkTide, placeholderText } from '../theme';
 
 
-const menuS = css`
-  box-shadow: 0 4px 4px ${veryThinTide};
+export interface MenuProps {
+  className?: string;
+}
+
+
+const rootS = css`
+  border-right: 1px solid ${placeholderText};
 `;
 
 const logoS = css`
-  width: 57px;
-  height: 48px;
+  width: 120px;
+  height: auto;
 
   color: ${darkTide};
 `;
 
 const containerS = css`
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0.25rem;
+  position: sticky;
+  top: 0;
+
+  box-sizing: border-box;
 `;
+
+const headS = css`
+  display: flex;
+  margin: 2rem 1rem;
+`;
+
 
 export function Menu(props: MenuProps) {
 
+  const { className } = props;
+
   return (
-    <nav className={cx('app-menu', menuS)}>
+    <nav className={cx('app-menu', rootS, className)}>
       <div className={cx(containerS)}>
-        <GirlFace className={cx(logoS)} />
+        <h1 className={headS}>
+          <Link to='/'>
+            <Rano className={cx(logoS)} />
+          </Link>
+        </h1>
       </div>
     </nav>
   );

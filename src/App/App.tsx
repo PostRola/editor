@@ -11,8 +11,8 @@ export function App() {
       <Routes>
         <Route path='/' element={<Shell />}>
           <Route path='' element={<Home />} />
-          <Route path='/new' element={<NewPost />} />
         </Route>
+        <Route path='/new' element={<NewPost />} />
       </Routes>
     </BrowserRouter>
   );

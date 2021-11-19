@@ -1,10 +1,13 @@
 import { css, cx } from '@emotion/css';
 import type { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 
-type BaseButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+import { darkTide, tide } from '../theme';
+
+
+export type BaseButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
 export interface ButtonProps extends BaseButtonProps {
-  variant?: 'minimal';
+  variant?: 'standard' | 'minimal';
 }
 
 
@@ -17,25 +20,37 @@ const base = css`
 
   cursor: pointer;
 
+  border: none;
   background: transparent;
   color: inherit;
+  outline: none;
 
   font-family: inherit;
   font-size: inherit;
 `;
 
-export const minimal = css`
+const minimal = css`
   ${base};
 
-  outline: none;
-  border: none;
 `;
+
+const standard = css`
+  ${base};
+
+  padding: 0.5rem;
+  height: 36px;
+
+  color: ${tide};
+  background-color: ${darkTide};
+`;
+
+const variants = { minimal, standard };
 
 
 export function Button(props: ButtonProps) {
   const { variant, className } = props;
 
-  const classes = cx(base, variant === 'minimal' && minimal, className);
+  const classes = cx(base, variants[variant || 'standard'], className);
 
   return (
     <button {...props} className={classes} />
