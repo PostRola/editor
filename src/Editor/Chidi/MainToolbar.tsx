@@ -1,13 +1,13 @@
 import { css, cx } from '@emotion/css';
 import { Editor } from '@tiptap/react';
 
-import { EditorButton } from './EditorButton';
 import {
   Bold, Italic, Underline, Strikethrough,
   H2, H3, CodeView, Image, DoubleQuote,
   ListOrdered, ListUnordered, Attachment,
   ArrowGoBack, ArrowGoForward
  } from '../../Icon';
+import { EditorButton } from './EditorButton';
 
 export interface MainToolbarProps {
   className?: string;

@@ -1,10 +1,10 @@
 import { css, cx } from '@emotion/css';
 
-import { Button, ButtonProps } from '../../Components/Button';
+import { ButtonBase, ButtonBaseProps } from '../../Components/ButtonBase';
 import { darkTide, whiteLilac } from '../../theme';
 
 
-export interface EditorButtonProps extends ButtonProps {
+export interface EditorButtonProps extends ButtonBaseProps {
   pushed?: boolean;
 }
 
@@ -36,6 +36,6 @@ export function EditorButton(props: EditorButtonProps) {
   delete modified.pushed;
 
   return (
-    <Button {...modified} variant={'minimal'} className={classes} />
+    <ButtonBase {...modified} className={classes} />
   );
 }

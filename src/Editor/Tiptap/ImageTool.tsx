@@ -1,6 +1,6 @@
 import { css, cx } from '@emotion/css';
 
-import { Button, ButtonProps } from '../../Components/Button';
+import { ButtonBase, ButtonBaseProps } from '../../Components/ButtonBase';
 import { ArrowLeftS, ArrowRightS, Close, Substract } from '../../Icon';
 import { tide } from '../../theme';
 
@@ -81,28 +81,28 @@ export function ImageTools(props: ImageToolsProps) {
 
   return (
     <div>
-      <Button variant={'minimal'} className={cx(altStyle, isAlt && 'active')}
+      <ButtonBase className={cx(altStyle, isAlt && 'active')}
         onClick={onAltToggle}>
           Alt
-      </Button>
+      </ButtonBase>
       <div className={cx(panelStyle, isImage && 'isImage')}>
         {isImage && isSelected && (
           <SizeButton isImage={isImage}
             state={size} onToggle={onSize} />)}
 
         {(!isImage || (isImage && isSelected)) && (
-          <Button variant={'minimal'}
+          <ButtonBase
             className={cx(closeStyle, isImage && 'active')}
             onClick={onRemove}>
               <Close />
-          </Button>)}
+          </ButtonBase>)}
       </div>
     </div>
   );
 }
 
 
-export interface SizeButtonProps extends ButtonProps {
+export interface SizeButtonProps extends ButtonBaseProps {
   isImage: boolean;
   state: ImageSize;
   onToggle: (size: ImageSize) => void;
@@ -181,11 +181,11 @@ export function SizeButton(props: SizeButtonProps) {
   const classes = cx(sizeButtonStyle, state, isImage && 'active');
 
   return (
-    <Button {...modified} variant={'minimal'} className={classes}
+    <ButtonBase {...modified} className={classes}
       onClick={onClick}>
         <ArrowLeftS className='left' />
         <Substract className='subtract' />
         <ArrowRightS className='right' />
-    </Button>
+    </ButtonBase>
   );
 }

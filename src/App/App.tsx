@@ -1,19 +1,24 @@
+import { ThemeProvider } from '@fluentui/react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { Shell } from './Shell';
 import { NewPost } from '../Post/NewPost';
 import { Home } from '../Home/Home';
+import { appTheme } from '../theme';
+
+import { Shell } from './Shell';
 
 
 export function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Shell />}>
-          <Route path='' element={<Home />} />
-        </Route>
-        <Route path='/new' element={<NewPost />} />
-      </Routes>
-    </BrowserRouter>
+    <ThemeProvider theme={appTheme}>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Shell />}>
+            <Route path='' element={<Home />} />
+          </Route>
+          <Route path='/new' element={<NewPost />} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }

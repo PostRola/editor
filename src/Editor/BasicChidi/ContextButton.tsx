@@ -1,8 +1,8 @@
 import { css, cx } from '@emotion/css';
 
-import { Button, ButtonProps } from '../../Components/Button';
+import { ButtonBase, ButtonBaseProps } from '../../Components/ButtonBase';
 
-export interface ContextButtonProps extends ButtonProps {
+export interface ContextButtonProps extends ButtonBaseProps {
 }
 
 
@@ -18,6 +18,6 @@ export function ContextButton(props: ContextButtonProps) {
   const classes = cx(pushStyle, className);
 
   return (
-    <Button {...props} variant={'minimal'} className={classes} />
+    <ButtonBase {...props} className={classes} />
   );
 }

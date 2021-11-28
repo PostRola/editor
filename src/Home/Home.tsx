@@ -1,6 +1,6 @@
 import { cx } from '@emotion/css';
+import { PrimaryButton } from '@fluentui/react';
 
-import { Button } from '../Components/Button';
 
 export interface HomeProps {}
 
@@ -11,7 +11,9 @@ export function Home(props: HomeProps) {
     <div className={cx('home')}>
       <h2>Welcome to Chidi - The front-end of Rano.</h2>
       <div>
-        <Button>New Port</Button>
+        <PrimaryButton>
+          Create New Post
+        </PrimaryButton>
       </div>
     </div>
   );
