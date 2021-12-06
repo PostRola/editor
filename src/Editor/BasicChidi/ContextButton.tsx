@@ -1,6 +1,6 @@
 import { css, cx } from '@emotion/css';
 
-import { ButtonBase, ButtonBaseProps } from '../../Components/ButtonBase';
+import { ButtonBase, ButtonBaseProps } from '../../Component/ButtonBase';
 
 export interface ContextButtonProps extends ButtonBaseProps {
 }

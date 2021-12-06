@@ -37,7 +37,6 @@ export interface ChidiProps {
 
 const rootS = css`
   position: relative;
-  padding-top: 3rem;
 
   /* Dark shade: #626975 or #514740 */
   color: ${darkTide};

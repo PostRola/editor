@@ -16,7 +16,6 @@ export function Shell() {
   const theme = useMantineTheme();
   const isSmall = useMediaQuery(trimQuery(theme.fn.smallerThan('sm')));
 
-
   const headerEl = isSmall ? (
     <AppHeader
       height={48}

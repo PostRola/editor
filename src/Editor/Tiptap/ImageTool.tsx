@@ -1,6 +1,6 @@
 import { css, cx } from '@emotion/css';
 
-import { ButtonBase, ButtonBaseProps } from '../../Components/ButtonBase';
+import { ButtonBase, ButtonBaseProps } from '../../Component/ButtonBase';
 import { ArrowLeftS, ArrowRightS, Close, Substract } from '../../Icon';
 import { tide } from '../../theme';
 
