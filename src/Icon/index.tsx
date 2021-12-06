@@ -1,9 +1,58 @@
-import { SVGIcon, SVGIconProps } from './Icon';
-
-export type IconProps = Pick<SVGIconProps, 'className'>;
+import { SVGIcon, BaseIconProps } from './Icon';
 
 
-export function Attachment(props: IconProps) {
+
+export function Article(props: BaseIconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z'/>
+      <path d='M20 22H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1zm-1-2V4H5v16h14zM7 6h4v4H7V6zm0 6h10v2H7v-2zm0 4h10v2H7v-2zm6-9h4v2h-4V7z'/>
+    </SVGIcon>
+  );
+}
+
+
+export function ArrowGoBack(props: BaseIconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z'/>
+      <path d='M5.828 7l2.536 2.536L6.95 10.95 2 6l4.95-4.95 1.414 1.414L5.828 5H13a8 8 0 1 1 0 16H4v-2h9a6 6 0 1 0 0-12H5.828z' />
+    </SVGIcon>
+  );
+}
+
+
+export function ArrowGoForward(props: BaseIconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z' />
+      <path d='M18.172 7H11a6 6 0 1 0 0 12h9v2h-9a8 8 0 1 1 0-16h7.172l-2.536-2.536L17.05 1.05 22 6l-4.95 4.95-1.414-1.414L18.172 7z' />
+    </SVGIcon>
+  );
+}
+
+
+export function ArrowLeftS(props: BaseIconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z'/>
+      <path d='M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z'/>
+    </SVGIcon>
+  );
+}
+
+
+export function ArrowRightS(props: BaseIconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z' />
+      <path d='M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z' />
+    </SVGIcon>
+  );
+}
+
+
+export function Attachment(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z' />
@@ -14,47 +63,7 @@ export function Attachment(props: IconProps) {
 }
 
 
-export function ArrowGoBack(props: IconProps) {
-  return (
-    <SVGIcon {...props} viewBox='0 0 24 24'>
-      <path fill='none' d='M0 0h24v24H0z'/>
-      <path d='M5.828 7l2.536 2.536L6.95 10.95 2 6l4.95-4.95 1.414 1.414L5.828 5H13a8 8 0 1 1 0 16H4v-2h9a6 6 0 1 0 0-12H5.828z' />
-    </SVGIcon>
-  );
-}
-
-
-export function ArrowGoForward(props: IconProps) {
-  return (
-    <SVGIcon {...props} viewBox='0 0 24 24'>
-      <path fill='none' d='M0 0h24v24H0z' />
-      <path d='M18.172 7H11a6 6 0 1 0 0 12h9v2h-9a8 8 0 1 1 0-16h7.172l-2.536-2.536L17.05 1.05 22 6l-4.95 4.95-1.414-1.414L18.172 7z' />
-    </SVGIcon>
-  );
-}
-
-
-export function ArrowLeftS(props: IconProps) {
-  return (
-    <SVGIcon {...props} viewBox='0 0 24 24'>
-      <path fill='none' d='M0 0h24v24H0z'/>
-      <path d='M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z'/>
-    </SVGIcon>
-  );
-}
-
-
-export function ArrowRightS(props: IconProps) {
-  return (
-    <SVGIcon {...props} viewBox='0 0 24 24'>
-      <path fill='none' d='M0 0h24v24H0z' />
-      <path d='M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z' />
-    </SVGIcon>
-  );
-}
-
-
-export function Bold(props: IconProps) {
+export function Bold(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z' />
@@ -64,7 +73,7 @@ export function Bold(props: IconProps) {
 }
 
 
-export function Check(props: IconProps) {
+export function Check(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z' />
@@ -74,7 +83,7 @@ export function Check(props: IconProps) {
 }
 
 
-export function Close(props: IconProps) {
+export function Close(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z'/>
@@ -84,7 +93,7 @@ export function Close(props: IconProps) {
 }
 
 
-export function CodeView(props: IconProps) {
+export function CodeView(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z' />
@@ -94,7 +103,7 @@ export function CodeView(props: IconProps) {
 }
 
 
-export function DeleteBin2(props: IconProps) {
+export function DeleteBin2(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z'/>
@@ -104,7 +113,7 @@ export function DeleteBin2(props: IconProps) {
 }
 
 
-export function DoubleQuote(props: IconProps) {
+export function DoubleQuote(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z'/>
@@ -114,7 +123,7 @@ export function DoubleQuote(props: IconProps) {
 }
 
 
-export function Image(props: IconProps) {
+export function Image(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z' />
@@ -124,7 +133,7 @@ export function Image(props: IconProps) {
 }
 
 
-export function Information(props: IconProps) {
+export function Information(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z'/>
@@ -134,7 +143,7 @@ export function Information(props: IconProps) {
 }
 
 
-export function Italic(props: IconProps) {
+export function Italic(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z' />
@@ -143,7 +152,7 @@ export function Italic(props: IconProps) {
   );
 }
 
-export function Landscape(props: IconProps) {
+export function Landscape(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z'/>
@@ -153,7 +162,7 @@ export function Landscape(props: IconProps) {
 }
 
 
-export function Strikethrough(props: IconProps) {
+export function Strikethrough(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z' />
@@ -163,7 +172,7 @@ export function Strikethrough(props: IconProps) {
 }
 
 
-export function Underline(props: IconProps) {
+export function Underline(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z' />
@@ -173,7 +182,7 @@ export function Underline(props: IconProps) {
 }
 
 
-export function H1(props: IconProps) {
+export function H1(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0H24V24H0z' />
@@ -183,7 +192,7 @@ export function H1(props: IconProps) {
 }
 
 
-export function H2(props: IconProps) {
+export function H2(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0H24V24H0z' />
@@ -193,7 +202,7 @@ export function H2(props: IconProps) {
 }
 
 
-export function H3(props: IconProps) {
+export function H3(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0H24V24H0z' />
@@ -203,7 +212,7 @@ export function H3(props: IconProps) {
 }
 
 
-export function Link(props: IconProps) {
+export function Link(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z' />
@@ -213,7 +222,7 @@ export function Link(props: IconProps) {
 }
 
 
-export function LinkUnlink(props: IconProps) {
+export function LinkUnlink(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z' />
@@ -223,7 +232,7 @@ export function LinkUnlink(props: IconProps) {
 }
 
 
-export function ListOrdered(props: IconProps) {
+export function ListOrdered(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z'/>
@@ -233,7 +242,7 @@ export function ListOrdered(props: IconProps) {
 }
 
 
-export function ListUnordered(props: IconProps) {
+export function ListUnordered(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z'/>
@@ -243,7 +252,27 @@ export function ListUnordered(props: IconProps) {
 }
 
 
-export function SingleQuote(props: IconProps) {
+export function PriceTag3(props: BaseIconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z'/>
+      <path d='M10.9 2.1l9.899 1.415 1.414 9.9-9.192 9.192a1 1 0 0 1-1.414 0l-9.9-9.9a1 1 0 0 1 0-1.414L10.9 2.1zm.707 2.122L3.828 12l8.486 8.485 7.778-7.778-1.06-7.425-7.425-1.06zm2.12 6.364a2 2 0 1 1 2.83-2.829 2 2 0 0 1-2.83 2.829z'/>
+    </SVGIcon>
+  );
+}
+
+
+export function Settings2(props: BaseIconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill="none" d="M0 0h24v24H0z"/>
+      <path d="M8.686 4l2.607-2.607a1 1 0 0 1 1.414 0L15.314 4H19a1 1 0 0 1 1 1v3.686l2.607 2.607a1 1 0 0 1 0 1.414L20 15.314V19a1 1 0 0 1-1 1h-3.686l-2.607 2.607a1 1 0 0 1-1.414 0L8.686 20H5a1 1 0 0 1-1-1v-3.686l-2.607-2.607a1 1 0 0 1 0-1.414L4 8.686V5a1 1 0 0 1 1-1h3.686zM6 6v3.515L3.515 12 6 14.485V18h3.515L12 20.485 14.485 18H18v-3.515L20.485 12 18 9.515V6h-3.515L12 3.515 9.515 6H6zm6 10a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+    </SVGIcon>
+  );
+}
+
+
+export function SingleQuote(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z'/>
@@ -253,7 +282,7 @@ export function SingleQuote(props: IconProps) {
 }
 
 
-export function Substract(props: IconProps) {
+export function Substract(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z'/>
@@ -263,7 +292,7 @@ export function Substract(props: IconProps) {
 }
 
 
-export function Template(props: IconProps) {
+export function Template(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
     </SVGIcon>

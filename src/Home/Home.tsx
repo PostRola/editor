@@ -1,5 +1,6 @@
 import { cx } from '@emotion/css';
-import { PrimaryButton } from '@fluentui/react';
+import { Button, Text, Title } from '@mantine/core';
+
 
 
 export interface HomeProps {}
@@ -9,12 +10,9 @@ export function Home(props: HomeProps) {
 
   return (
     <div className={cx('home')}>
-      <h2>Welcome to Chidi - The front-end of Rano.</h2>
-      <div>
-        <PrimaryButton>
-          Create New Post
-        </PrimaryButton>
-      </div>
+      <Title order={2}>Welcome to Chidi - The front-end of Rano.</Title>
+      <Text>More content coming soon.</Text>
+      <Button>New Post</Button>
     </div>
   );
 

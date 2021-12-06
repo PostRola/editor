@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@fluentui/react';
+import { MantineProvider } from '@mantine/styles';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { NewPost } from '../Post/NewPost';
@@ -10,7 +10,7 @@ import { Shell } from './Shell';
 
 export function App() {
   return (
-    <ThemeProvider theme={appTheme}>
+    <MantineProvider withNormalizeCSS withGlobalStyles theme={appTheme}>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Shell />}>
@@ -19,6 +19,6 @@ export function App() {
           <Route path='/new' element={<NewPost />} />
         </Routes>
       </BrowserRouter>
-    </ThemeProvider>
+    </MantineProvider>
   );
 }

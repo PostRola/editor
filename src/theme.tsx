@@ -1,4 +1,4 @@
-import { createTheme } from '@fluentui/style-utilities';
+import { MantineThemeOverride } from '@mantine/core';
 
 export const echoBlue = '#A7B3C8';
 export const tide = '#C1B6AC';
@@ -12,35 +12,19 @@ export const darkTide = '#514740';
 
 export const border = placeholderText;
 
-export const appTheme = createTheme({
-  defaultFontStyle: {
-    fontFamily: `'Fira Sans', sans-serif`
-  },
-  palette: {
-    themePrimary: '#27616e',
-    themeLighterAlt: '#f3f8f9',
-    themeLighter: '#d0e3e8',
-    themeLight: '#aaccd3',
-    themeTertiary: '#669ca8',
-    themeSecondary: '#36727f',
-    themeDarkAlt: '#235763',
-    themeDark: '#1d4953',
-    themeDarker: '#15363d',
-    neutralLighterAlt: '#f8f8f8',
-    neutralLighter: '#f4f4f4',
-    neutralLight: '#eaeaea',
-    neutralQuaternaryAlt: '#dadada',
-    neutralQuaternary: '#d0d0d0',
-    neutralTertiaryAlt: '#c8c8c8',
-    neutralTertiary: '#8ab7ba',
-    neutralSecondary: '#437073',
-    neutralPrimaryAlt: '#528a8d',
-    neutralPrimary: '#0d3133',
-    neutralDark: '#285d60',
-    black: '#184749',
-    white: '#ffffff',
+
+export const fontFamily = '"Fira Sans", sans-serif';
+
+
+export const appTheme: MantineThemeOverride = {
+  fontFamily,
+  primaryColor: 'cyan',
+  lineHeight: 1.5,
+  headings: {
+    fontFamily
   }
-});
+};
+
 
 // Theme 1
 // #27616e

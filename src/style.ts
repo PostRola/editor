@@ -12,17 +12,18 @@ injectGlobal`
     height: 100%;
 
     /* font-family: 'Zilla Slab', serif; */
-    font-family: 'Fira Sans', sans-serif;
+    /* font-family: 'Fira Sans', sans-serif; */
   }
 
   body {
     margin: 0;
     height: 100%;
 
-    line-height: 1.25;
+    /* line-height: 1.25; */
   }
 
   #mount {
+    display: grid;
     height: 100%;
   }
 
