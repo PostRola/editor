@@ -13,13 +13,12 @@ export interface TitleProps {
 const fontStyle = css`
   font-family: inherit;
   font-size: 3rem;
-  font-weight: 200;
+  font-weight: 600;
   line-height: 1.15;
 `;
 
 const rootStyle = css`
   position: relative;
-  padding-bottom: 1rem;
 
   ${fontStyle};
 `;
@@ -53,7 +52,7 @@ const textStyle = css`
 
   &::placeholder {
     color: ${placeholderText};
-    font-weight: 500;
+    font-weight: 600;
   }
 `;
 

@@ -14,6 +14,7 @@ export const border = placeholderText;
 
 
 export const fontFamily = '"Fira Sans", sans-serif';
+export const editorFontFamily = '"Zilla Slab", serif';
 
 
 export const appTheme: MantineThemeOverride = {

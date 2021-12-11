@@ -1,44 +1,21 @@
-import { css, cx } from '@emotion/css';
+import { Group, useCss } from '@mantine/core';
 import { Editor } from '@tiptap/react';
 
-import {
-  Bold, Italic, Underline, Strikethrough,
-  H2, H3, CodeView, Image, DoubleQuote,
-  ListOrdered, ListUnordered, Attachment,
-  ArrowGoBack, ArrowGoForward
- } from '../../Icon';
-import { EditorButton } from './EditorButton';
+import { EditorIconButton } from './EditorButton';
+
 
 export interface MainToolbarProps {
   className?: string;
+
   editor: Editor;
 }
-
-const rootS = css`
-  display: flex;
-`;
-
-const rowS = css`
-  display: flex;
-`;
-
-const buttonStyle = css`
-  width: 2.25rem;
-  height: 2.25rem;
-`;
-
-const edgeStyle = css`
-`;
-
-const iconStyle = css`
-  width: 1rem;
-  height: 1rem;
-`;
 
 
 export function MainToolbar(props: MainToolbarProps) {
 
   const { className, editor } = props;
+
+  const { cx } = useCss();
 
   const isBold = editor.isActive('bold');
   const isItalic = editor.isActive('italic');
@@ -66,7 +43,7 @@ export function MainToolbar(props: MainToolbarProps) {
 
   const onImage = () => editor.chain().focus()
     .setImage({
-      src: 'https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+      src: '',
       alt: '',
       caption: '',
       size: 'fullwidth'
@@ -74,67 +51,57 @@ export function MainToolbar(props: MainToolbarProps) {
     .run();
 
   return (
-    <div className={cx('toolbar', rootS, className)}>
-      <div className={rowS}>
-        <EditorButton className={buttonStyle}
-          pushed={isH2} onClick={onH2}>
-            <H2 className={iconStyle} />
-        </EditorButton>
-        <EditorButton className={buttonStyle}
-          pushed={isH3} onClick={onH3}>
-            <H3 className={iconStyle} />
-        </EditorButton>
-        <EditorButton className={buttonStyle}
-          pushed={isQuote} onClick={onQuote}>
-            <DoubleQuote className={iconStyle} />
-        </EditorButton>
-        <EditorButton className={cx(buttonStyle, edgeStyle)}
-          pushed={isListOrdered} onClick={onListOrdered}>
-            <ListOrdered className={iconStyle} />
-        </EditorButton>
-        <EditorButton className={buttonStyle}
-          pushed={isListUnordered} onClick={onListUnordered}>
-            <ListUnordered className={iconStyle} />
-        </EditorButton>
-        <EditorButton className={buttonStyle}
-          pushed={isCodeBlock} onClick={onCodeBlock}>
-            <CodeView className={iconStyle} />
-        </EditorButton>
-        <EditorButton className={buttonStyle} onClick={onImage}>
-          <Image className={iconStyle} />
-        </EditorButton>
-        <EditorButton className={buttonStyle} pushed={false}>
-          <Attachment className={iconStyle} />
-        </EditorButton>
-      </div>
+    <Group className={cx('toolbar', className)} spacing='xl'>
+      <Group spacing={0}>
+        <EditorIconButton
+          title='Heading' icon='H2'
+          pushed={isH2} onClick={onH2} />
+        <EditorIconButton
+          title='Sub Heading' icon='H3'
+          pushed={isH3} onClick={onH3}/>
+        <EditorIconButton
+          title='Quote' icon='DoubleQuote'
+          pushed={isQuote} onClick={onQuote} />
+        <EditorIconButton
+          title='Ordered List' icon='ListOrdered'
+          pushed={isListOrdered} onClick={onListOrdered} />
+        <EditorIconButton
+          title='Unordered List' icon='ListUnordered'
+          pushed={isListUnordered} onClick={onListUnordered} />
+        <EditorIconButton
+          title='Code Snippet' icon='CodeView'
+          pushed={isCodeBlock} onClick={onCodeBlock} />
+        <EditorIconButton
+          title='Attach Image' icon='Image'
+          onClick={onImage} />
+        <EditorIconButton
+          title='Add Attachment' icon='Attachment'
+          pushed={false} />
+      </Group>
 
-      <div className={rowS}>
-        <EditorButton className={cx(buttonStyle, edgeStyle)}
-            pushed={isBold} onClick={onBold}>
-              <Bold className={iconStyle} />
-        </EditorButton>
-        <EditorButton className={buttonStyle}
-          pushed={isItalic} onClick={onItalic}>
-            <Italic className={iconStyle} />
-        </EditorButton>
-        <EditorButton className={buttonStyle}
-          pushed={isUnderline} onClick={onUnderline}>
-            <Underline className={iconStyle} />
-        </EditorButton>
-        <EditorButton className={buttonStyle}
-          pushed={isStrike} onClick={onStrike}>
-            <Strikethrough className={iconStyle} />
-        </EditorButton>
-      </div>
+      <Group spacing={0}>
+        <EditorIconButton
+          title='Emphasis' icon='Bold'
+          pushed={isBold} onClick={onBold} />
+        <EditorIconButton
+          title='Italic' icon='Italic'
+          pushed={isItalic} onClick={onItalic} />
+        <EditorIconButton
+          title='Underline' icon='Underline'
+          pushed={isUnderline} onClick={onUnderline} />
+        <EditorIconButton
+          title='Strikethrough' icon='Strikethrough'
+          pushed={isStrike} onClick={onStrike} />
+      </Group>
 
-      <div className={rowS}>
-        <EditorButton className={buttonStyle} onClick={onUndo}>
-          <ArrowGoBack className={iconStyle} />
-        </EditorButton>
-        <EditorButton className={buttonStyle} onClick={onRedo}>
-          <ArrowGoForward className={iconStyle} />
-        </EditorButton>
-      </div>
-    </div>
+      <Group spacing={0}>
+        <EditorIconButton
+          title='Undo' icon='ArrowGoBack'
+          onClick={onUndo} />
+        <EditorIconButton
+          title='Redo' icon='ArrowGoForward'
+          onClick={onRedo} />
+      </Group>
+    </Group>
   );
 }

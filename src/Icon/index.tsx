@@ -103,6 +103,16 @@ export function CodeView(props: BaseIconProps) {
 }
 
 
+export function Dashboard(props: BaseIconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z'/>
+      <path d='M13 21V11h8v10h-8zM3 13V3h8v10H3zm6-2V5H5v6h4zM3 21v-6h8v6H3zm2-2h4v-2H5v2zm10 0h4v-6h-4v6zM13 3h8v6h-8V3zm2 2v2h4V5h-4z'/>
+    </SVGIcon>
+  );
+}
+
+
 export function DeleteBin2(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
@@ -262,11 +272,21 @@ export function PriceTag3(props: BaseIconProps) {
 }
 
 
-export function Settings2(props: BaseIconProps) {
+export function SendPlane(props: BaseIconProps) {
   return (
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill="none" d="M0 0h24v24H0z"/>
-      <path d="M8.686 4l2.607-2.607a1 1 0 0 1 1.414 0L15.314 4H19a1 1 0 0 1 1 1v3.686l2.607 2.607a1 1 0 0 1 0 1.414L20 15.314V19a1 1 0 0 1-1 1h-3.686l-2.607 2.607a1 1 0 0 1-1.414 0L8.686 20H5a1 1 0 0 1-1-1v-3.686l-2.607-2.607a1 1 0 0 1 0-1.414L4 8.686V5a1 1 0 0 1 1-1h3.686zM6 6v3.515L3.515 12 6 14.485V18h3.515L12 20.485 14.485 18H18v-3.515L20.485 12 18 9.515V6h-3.515L12 3.515 9.515 6H6zm6 10a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+      <path d="M1.923 9.37c-.51-.205-.504-.51.034-.689l19.086-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.475.553-.717.07L11 13 1.923 9.37zm4.89-.2l5.636 2.255 3.04 6.082 3.546-12.41L6.812 9.17z"/>
+    </SVGIcon>
+  );
+}
+
+
+export function Settings2(props: BaseIconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z'/>
+      <path d='M8.686 4l2.607-2.607a1 1 0 0 1 1.414 0L15.314 4H19a1 1 0 0 1 1 1v3.686l2.607 2.607a1 1 0 0 1 0 1.414L20 15.314V19a1 1 0 0 1-1 1h-3.686l-2.607 2.607a1 1 0 0 1-1.414 0L8.686 20H5a1 1 0 0 1-1-1v-3.686l-2.607-2.607a1 1 0 0 1 0-1.414L4 8.686V5a1 1 0 0 1 1-1h3.686zM6 6v3.515L3.515 12 6 14.485V18h3.515L12 20.485 14.485 18H18v-3.515L20.485 12 18 9.515V6h-3.515L12 3.515 9.515 6H6zm6 10a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'/>
     </SVGIcon>
   );
 }
@@ -277,6 +297,16 @@ export function SingleQuote(props: BaseIconProps) {
     <SVGIcon {...props} viewBox='0 0 24 24'>
       <path fill='none' d='M0 0h24v24H0z'/>
       <path d='M9.583 17.321C8.553 16.227 8 15 8 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z' />
+    </SVGIcon>
+  );
+}
+
+
+export function SoundModule(props: BaseIconProps) {
+  return (
+    <SVGIcon {...props} viewBox='0 0 24 24'>
+      <path fill='none' d='M0 0h24v24H0z'/>
+      <path d='M21 18v3h-2v-3h-2v-2h6v2h-2zM5 18v3H3v-3H1v-2h6v2H5zm6-12V3h2v3h2v2H9V6h2zm0 4h2v11h-2V10zm-8 4V3h2v11H3zm16 0V3h2v11h-2z'/>
     </SVGIcon>
   );
 }

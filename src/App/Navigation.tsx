@@ -45,13 +45,19 @@ export function Navigation(props: NavigationProps) {
       )}
 
       <Navbar.Section grow>
-        <Group direction='column' spacing='xs' grow>
-          <NavLink to='/posts' icon='Article'>
-            <Text>Posts</Text>
+        <Group direction='column' spacing={48} grow>
+          <NavLink to='/' icon='Dashboard'>
+            <Text>Dashboard</Text>
           </NavLink>
-          <NavLink to='/tags' icon='PriceTag3'>
-            <Text>Tags</Text>
-          </NavLink>
+
+          <Group direction='column' spacing='xs' grow>
+            <NavLink to='/posts' icon='Article'>
+              <Text>Posts</Text>
+            </NavLink>
+            <NavLink to='/tags' icon='PriceTag3'>
+              <Text>Tags</Text>
+            </NavLink>
+          </Group>
         </Group>
       </Navbar.Section>
 

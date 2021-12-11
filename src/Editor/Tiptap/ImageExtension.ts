@@ -1,8 +1,8 @@
 import { Attribute, Node } from '@tiptap/core';
 import { Command, ReactNodeViewRenderer } from '@tiptap/react';
 
-import { ImageEditorNode } from './ImageEditorNode';
 import { ImageAttrs } from '../Type';
+import { ImageEditorNode } from './ImageEditorNode';
 
 
 export interface ImageOptions {}
@@ -26,7 +26,7 @@ export const Image = Node.create<ImageOptions>({
   addAttributes() {
     const attrs: ExtensionAttrs = {
       src: {
-        default: '',
+        default: ''
       },
       caption: {
         default: ''
@@ -59,7 +59,7 @@ export const Image = Node.create<ImageOptions>({
       setImage: (_opts) => ({ commands }) => {
         return commands.insertContent({
           type: this.name
-        })
+        });
       }
     };
   }

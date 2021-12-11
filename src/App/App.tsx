@@ -1,13 +1,12 @@
 import { MantineProvider } from '@mantine/styles';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { NewPost } from '../Post/NewPost';
-import { Home } from '../View/Home/Home';
 import { appTheme } from '../theme';
-
-import { Shell } from './Shell';
-import { Tags } from '../View/Tag/Tags';
+import { NewPost } from '../View/Post/NewPost';
+import { Home } from '../View/Home/Home';
 import { Posts } from '../View/Post/Posts';
+import { Tags } from '../View/Tag/Tags';
+import { Shell } from './Shell';
 
 
 export function App() {

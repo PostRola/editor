@@ -1,4 +1,5 @@
-import { css, cx } from '@emotion/css';
+import { Group, Text } from '@mantine/core';
+import { createStyles } from '@mantine/styles';
 
 import Blockquote from '@tiptap/extension-blockquote';
 import Bold from '@tiptap/extension-bold';
@@ -18,43 +19,68 @@ import OrderedList from '@tiptap/extension-ordered-list';
 import Paragraph from '@tiptap/extension-paragraph';
 import Placeholder from '@tiptap/extension-placeholder';
 import Strike from '@tiptap/extension-strike';
-import Text from '@tiptap/extension-text';
+import TiptapText from '@tiptap/extension-text';
 import Underline from '@tiptap/extension-underline';
 import { EditorContent, useEditor } from '@tiptap/react';
 
 import { useEffect, useState } from 'react';
 
-import { darkTide } from '../../theme';
+import { darkTide, editorFontFamily } from '../../theme';
 import { Image } from '../Tiptap/ImageExtension';
-
 import { MainToolbar } from './MainToolbar';
-
 import { Title } from './Title';
 
 export interface ChidiProps {
 
 }
 
-const rootS = css`
-  position: relative;
 
-  /* Dark shade: #626975 or #514740 */
-  color: ${darkTide};
-`;
+const useStyles = createStyles((theme) => ({
 
-const toolbarS = css`
-`;
+  root: {
+    position: 'relative',
+    height: '100%',
+    maxWidth: '1280px',
+    margin: '0 auto 1rem',
 
-const writerStyle = css`
-  padding: 1rem;
-  flex-grow: 1;
-  min-width: 0;
+    color: darkTide
+  },
 
-  font-size: 1.25rem;
-`;
+  toolbar: {
+    display: 'flex',
+    position: 'sticky',
+    zIndex: 2,
+    top: '0',
+
+    backgroundColor: '#FBFAFA',
+    border: '1px solid #EFEBEB',
+    borderTop: 0
+  },
+
+  writer: {
+    padding: '6rem 0rem 1rem',
+    flexGrow: 1,
+    minWidth: 0,
+
+    fontFamily: editorFontFamily,
+    fontSize: '1.25rem',
+  },
+
+  title: {
+    padding: '0.75rem 0',
+    marginBottom: '1rem',
+    borderTop: '1px solid #F1EFEE',
+    borderBottom: '1px solid #F1EFEE',
+  }
+
+}));
+
 
 
 export function Chidi(props: ChidiProps) {
+
+  const { classes, cx } = useStyles();
+
 
   const [title, setTitle] = useState('Sample title of the Post');
 
@@ -79,7 +105,7 @@ export function Chidi(props: ChidiProps) {
       Paragraph,
       Placeholder,
       Strike,
-      Text,
+      TiptapText,
       Underline
     ],
     content: '<p>Hello World! 🌎️</p>'
@@ -105,20 +131,21 @@ export function Chidi(props: ChidiProps) {
   };
 
   return (
-    <div className={cx('chidi', rootS)}>
+    <Group
+      className={cx('chidi', classes.root)}
+      align='stretch'
+      direction='column'
+      spacing={0}>
+        {editor && (
+          <MainToolbar className={classes.toolbar} editor={editor} /> )}
 
-      {editor && <MainToolbar className={toolbarS} editor={editor} />}
-
-      {/* <div>
-        <button onClick={onJSON}>GetJSON</button>
-        <br/>
-        <button onClick={onHTML}>GetHTML</button>
-      </div> */}
-
-      <div className={writerStyle}>
-        <Title value={title} onChange={setTitle} onCommit={onCommit} />
-        <EditorContent editor={editor} />
-      </div>
-    </div>
+        <div className={classes.writer}>
+          <Text size='xs' color='gray'>Title</Text>
+          <div className={classes.title}>
+            <Title value={title} onChange={setTitle} onCommit={onCommit} />
+          </div>
+          <EditorContent editor={editor} />
+        </div>
+    </Group>
   );
 }
