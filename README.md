@@ -1,2 +1,4 @@
-# chidi
-Tiptap Chidi
+# Chidi
+
+Chidi is a front-end (Admin Panel).
+
