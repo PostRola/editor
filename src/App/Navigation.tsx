@@ -1,4 +1,4 @@
-import { createStyles, Group, Navbar, NavbarProps, Text } from '@mantine/core';
+import { createStyles, Navbar, NavbarProps, Stack, Text } from '@mantine/core';
 import { Link } from 'react-router-dom';
 
 import { Rano } from '../Icon/logo';
@@ -45,20 +45,20 @@ export function Navigation(props: NavigationProps) {
       )}
 
       <Navbar.Section grow>
-        <Group direction='column' spacing={48} grow>
+        <Stack spacing={48}>
           <NavLink to='/' icon='Dashboard'>
             <Text>Dashboard</Text>
           </NavLink>
 
-          <Group direction='column' spacing='xs' grow>
+          <Stack spacing='xs'>
             <NavLink to='/posts' icon='Article'>
               <Text>Posts</Text>
             </NavLink>
             <NavLink to='/tags' icon='PriceTag3'>
               <Text>Tags</Text>
             </NavLink>
-          </Group>
-        </Group>
+          </Stack>
+        </Stack>
       </Navbar.Section>
 
       <Navbar.Section className={classes.footer}>

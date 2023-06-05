@@ -26,7 +26,7 @@ export function Shell() {
   const navbarEl = (
     <Navigation
       showLogo={!isSmall}
-      padding='lg'
+      p='lg'
       hiddenBreakpoint='sm'
       hidden={!opened}
       width={{ sm: 260, xl: 320 }} />

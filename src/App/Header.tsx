@@ -15,7 +15,7 @@ export function AppHeader(props: AppHeaderProps) {
   const { fixed, height, opened, setOpen } = props;
 
   return (
-    <Header fixed={fixed} height={height} padding='xs'>
+    <Header fixed={fixed} height={height} p='xs'>
       <Group spacing='lg'>
         <Burger
           opened={opened}

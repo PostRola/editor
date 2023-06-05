@@ -1,5 +1,5 @@
 import { createElement } from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import { App } from './App/App';
 
@@ -16,8 +16,9 @@ export function generateMountElm() {
 
 function main() {
   const mountElm = generateMountElm();
+  const root = createRoot(mountElm);
 
-  render(createElement(App), mountElm);
+  root.render(createElement(App));
 }
 
 

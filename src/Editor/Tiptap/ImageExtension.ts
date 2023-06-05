@@ -1,5 +1,5 @@
 import { Attribute, Node } from '@tiptap/core';
-import { Command, ReactNodeViewRenderer } from '@tiptap/react';
+import { ReactNodeViewRenderer } from '@tiptap/react';
 
 import { ImageAttrs } from '../Type';
 import { ImageEditorNode } from './ImageEditorNode';
@@ -10,9 +10,9 @@ export interface ImageOptions {}
 type ExtensionAttrs = { [key in keyof ImageAttrs]: Partial<Attribute>; };
 
 declare module '@tiptap/core' {
-  interface Commands {
+  interface Commands<ReturnType> {
     image: {
-      setImage: (option: ImageAttrs) => Command;
+      setImage: (option: ImageAttrs) => ReturnType;
     }
   }
 }
