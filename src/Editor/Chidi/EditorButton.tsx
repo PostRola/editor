@@ -1,5 +1,5 @@
 import { css, cx } from '@emotion/css';
-import { ActionIcon, ActionIconVariant, Tooltip } from '@mantine/core';
+import { ActionIcon, ActionIconProps, Tooltip } from '@mantine/core';
 
 import { Icon, IconSet } from '../../Icon/Icon';
 import { darkTide, whiteLilac } from '../../theme';
@@ -36,7 +36,7 @@ export function EditorIconButton(props: EditorButtonProps) {
   const { icon, pushed, title, onClick } = props;
 
   const classes = cx(pushStyle, pushed && 'pushed');
-  const variant: ActionIconVariant = pushed ? 'filled' : 'transparent';
+  const variant: ActionIconProps['variant'] = pushed ? 'filled' : 'transparent';
 
   return (
     <Tooltip

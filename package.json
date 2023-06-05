@@ -58,7 +58,8 @@
     "stylefire": "^7.0.3"
   },
   "scripts": {
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "test:types": "tsc -p tsconfig.json"
   },
   "volta": {
     "node": "16.12.0",

@@ -31,11 +31,11 @@ const useStyles = createStyles((theme) => ({
 
 
 const sizes: MantineSizes = {
-  xs: 12,
-  sm: 16,
-  md: 20,
-  lg: 24,
-  xl: 32
+  xs: '12',
+  sm: '16',
+  md: '20',
+  lg: '24',
+  xl: '32',
 };
 
 export function SVGIcon(props: SVGIconProps) {

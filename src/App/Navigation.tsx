@@ -1,4 +1,4 @@
-import { createStyles, Group, Navbar, NavbarProps, Stack, Text } from '@mantine/core';
+import { createStyles, Navbar, NavbarProps, Stack, Text } from '@mantine/core';
 import { Link } from 'react-router-dom';
 
 import { Rano } from '../Icon/logo';

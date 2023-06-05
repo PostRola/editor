@@ -1,4 +1,4 @@
-import { Group, Text } from '@mantine/core';
+import { Stack, Text } from '@mantine/core';
 import { createStyles } from '@mantine/styles';
 
 import Blockquote from '@tiptap/extension-blockquote';
@@ -131,10 +131,9 @@ export function Chidi(props: ChidiProps) {
   };
 
   return (
-    <Group
+    <Stack
       className={cx('chidi', classes.root)}
       align='stretch'
-      direction='column'
       spacing={0}>
         {editor && (
           <MainToolbar className={classes.toolbar} editor={editor} /> )}
@@ -146,6 +145,6 @@ export function Chidi(props: ChidiProps) {
           </div>
           <EditorContent editor={editor} />
         </div>
-    </Group>
+    </Stack>
   );
 }
