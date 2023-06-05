@@ -23,6 +23,7 @@ import TiptapText from '@tiptap/extension-text';
 import Underline from '@tiptap/extension-underline';
 import { EditorContent, useEditor } from '@tiptap/react';
 
+import { lowlight } from 'lowlight/lib/core';
 import { useEffect, useState } from 'react';
 
 import { darkTide, editorFontFamily } from '../../theme';
@@ -86,31 +87,34 @@ export function Chidi(props: ChidiProps) {
 
   const editor = useEditor({
     extensions: [
+      // Bare mimimum
       Document,
+      Paragraph,
+      TiptapText,
+
       Blockquote,
       Bold,
       BulletList,
       Code,
-      CodeBlockLowlight,
+      CodeBlockLowlight.configure({ lowlight }),
       Dropcursor,
       Gapcursor,
       HardBreak,
       Heading.configure({ levels: [2, 3] }),
       History,
       HorizontalRule,
-      Image,
       Italic,
       ListItem,
       OrderedList,
-      Paragraph,
       Placeholder,
       Strike,
-      TiptapText,
-      Underline
+      Underline,
+
+      // Custom extensions
+      Image,
     ],
     content: '<p>Hello World! 🌎️</p>'
   });
-
 
   useEffect(() => {
     return () => {

@@ -6,7 +6,6 @@ import { EditorIconButton } from './EditorButton';
 
 export interface MainToolbarProps {
   className?: string;
-
   editor: Editor;
 }
 
