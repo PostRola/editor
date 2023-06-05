@@ -1,4 +1,3 @@
-# Chidi
+# Editor
 
-Chidi is a front-end (Admin Panel).
-
+The rich content editor.
